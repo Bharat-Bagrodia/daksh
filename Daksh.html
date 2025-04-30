@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦸‍♂️ Daksh's SUPER Gift Challenge! 🎁</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            /* Using Poppins for readability on smaller text, Bangers for headings/buttons */
+            font-family: 'Poppins', sans-serif;
+            /* Marvel-inspired gradient background from the landing page */
+            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%); /* Dark Blue -> Red -> Gold */
+            margin: 0;
+            padding: 15px; /* Padding for smaller screens */
+            color: #333; /* Dark text for contrast on white panels */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* Comic book panel style */
+        .manga-panel {
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent white card */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            margin-bottom: 30px;
+            border: 3px solid #333; /* Comic book panel border */
+            position: relative; /* Needed for absolute positioning of characters */
+        }
+
+        /* Apply Bangers font to titles and specific elements */
+        .font-manga {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1px;
+            font-weight: normal; /* Bangers has built-in weight */
+        }
+
+        /* Main title style */
+        .birthday-title {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(40px, 10vw, 70px); /* Responsive font size */
+            text-align: center;
+            margin: 30px 0;
+            /* Multi-color title like the landing page */
+            color: #d32f2f; /* Default red */
+            text-shadow: 3px 3px 0px #000; /* Black shadow for comic effect */
+            animation: bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+        }
+        .birthday-title .text-blue { color: #1976d2; } /* Blue part */
+        .birthday-title .text-yellow { color: #fbc02d; } /* Yellow part */
+
+        @keyframes bounce {
+            0% { transform: translateY(0) rotate(-1deg); }
+            100% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        /* Panel titles */
+        .panel-title {
+             font-family: 'Bangers', cursive;
+             font-size: 2.5rem; /* Large panel titles */
+             text-align: center;
+             color: #b21f1f; /* Marvel Red */
+             text-shadow: 2px 2px 0 #ffffff, 3px 3px 0 rgba(0,0,0,0.1);
+             margin-bottom: 20px;
+             letter-spacing: 1px;
+        }
+
+        /* Character styling */
+        .character {
+            font-size: 90px; /* Slightly smaller */
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            opacity: 0.85;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+            transform: rotate(5deg); /* Slight tilt */
+        }
+
+        /* Speech bubble styling */
+        .speech-bubble {
+            position: relative;
+            background: #f1f5f9; /* Light grey-blue background */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 70px 20px 0; /* Keep margin for character */
+            border: 3px solid #64748b; /* Slate border */
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            font-weight: 600; /* Make text slightly bolder */
+            color: #1e293b; /* Darker slate text */
+        }
+        .speech-bubble p:first-child { font-size: 1.1em; } /* Emphasize first line */
+
+        /* Speech bubble tail */
+        .speech-bubble:after, .speech-bubble:before { display: none; } /* Remove old tail */
+        /* New simpler tail */
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 20px; /* Position near bottom right */
+            right: -25px; /* Point towards character */
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 30px; /* Triangle shape */
+            border-color: transparent transparent transparent #64748b; /* Border color */
+        }
+         .speech-bubble::before {
+             content: '';
+             position: absolute;
+             bottom: 20px;
+             right: -21px; /* Slightly inside border */
+             width: 0;
+             height: 0;
+             border-style: solid;
+             border-width: 15px 0 15px 30px;
+             border-color: transparent transparent transparent #f1f5f9; /* Background color */
+             z-index: 1; /* Cover border */
+         }
+
+
+        /* Marvel-style Buttons */
+        .btn {
+            font-family: 'Bangers', cursive; /* Use Bangers font */
+            display: inline-block; /* Allow side-by-side */
+            padding: 12px 25px;
+            margin: 10px 5px;
+            border-radius: 10px; /* Sharper corners */
+            font-size: 1.4rem; /* Larger font for Bangers */
+            font-weight: normal;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
+            text-transform: uppercase; /* Uppercase for comic style */
+            cursor: pointer;
+             /* Default blue button */
+            background: linear-gradient(45deg, #1976d2, #64b5f6); /* Blue (Captain America) */
+        }
+        .btn:hover {
+            transform: translateY(-4px) scale(1.03); /* More lift and slight scale */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+         .btn:active {
+            transform: translateY(1px) scale(0.98); /* Press down */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Specific button colors */
+        .btn-start { background: linear-gradient(45deg, #16a34a, #4ade80); } /* Green */
+        .btn-check { background: linear-gradient(45deg, #d32f2f, #ff7043); } /* Red/Orange */
+        .btn-reveal { background: linear-gradient(45deg, #fbc02d, #fff176); color: #333; } /* Gold/Yellow */
+        .btn-clear { background: linear-gradient(45deg, #64748b, #94a3b8); } /* Slate */
+
+
+        .hidden { display: none; }
+
+        .game-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Game board styling */
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* Tile styling */
+        .tile {
+            background: linear-gradient(135deg, #4f4f4f 0%, #2b2b2b 100%); /* Dark grey gradient */
+            border: 3px solid #fbc02d; /* Gold border */
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px; /* Larger question mark */
+            font-weight: bold;
+            color: #fbc02d; /* Gold question mark */
+            cursor: pointer;
+            border-radius: 10px; /* Match button corners */
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            perspective: 1000px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(251, 192, 45, 0.4); /* Gold glow on hover */
+        }
+
+        /* Tile flip animation */
+        .tile.flipped {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #1a2a6c 0%, #3b82f6 100%); /* Blue gradient when flipped */
+            border-color: #fff; /* White border when flipped */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            cursor: default;
+        }
+        .tile .tile-content {
+            transform: rotateY(180deg); /* Counter-rotate content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .gift-icon {
+            font-size: 50px;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+        }
+
+        /* Progress tracker */
+        .progress-tracker {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.3); /* Dark semi-transparent background */
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+        }
+        .progress-step {
+            font-family: 'Bangers', cursive; /* Use Bangers */
+            letter-spacing: 1px;
+            text-align: center;
+            width: 30%;
+            padding: 12px 8px;
+            border-radius: 10px;
+            background-color: #4b5563; /* Dark grey inactive */
+            color: #d1d5db; /* Light grey text */
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+            border: 2px solid #374151;
+        }
+        .active-step {
+            background: linear-gradient(45deg, #fbc02d, #fff176); /* Gold gradient */
+            color: #333; /* Dark text */
+            border-color: #ca8a04;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .completed-step {
+            background: linear-gradient(45deg, #16a34a, #4ade80); /* Green gradient */
+            color: #fff;
+            border-color: #14532d;
+            opacity: 0.9;
+        }
+        .completed-step::after { content: " ✔️"; font-size: 14px; }
+
+        /* Final message styling */
+        .final-message-box { /* Renamed from final-message to avoid conflict */
+            font-size: 1.5rem; /* Adjusted size */
+            font-weight: 600;
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 100%); /* Match body gradient */
+            border-radius: 15px;
+            border: 3px solid #fbc02d; /* Gold border */
+            color: #fff; /* White text */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Explosion effect */
+        .explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Bangers', cursive;
+            font-size: clamp(40px, 12vw, 100px); /* Responsive size */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 20px;
+            text-shadow: 3px 3px 0 #ff5722, /* Orange shadow */
+                         5px 5px 0 #000;   /* Black outline */
+            animation: explode 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+            z-index: 100;
+            line-height: 1.2;
+        }
+        @keyframes explode {
+            0% { transform: scale(0.1) rotate(-15deg); opacity: 0; }
+            60% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 0; } /* Fade out */
+        }
+
+        /* Input field styling */
+        .game-input {
+            padding: 12px 15px;
+            font-size: 18px;
+            margin: 10px 0;
+            border: 3px solid #64748b; /* Slate border */
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            width: calc(100% - 36px);
+            max-width: 300px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .game-input:focus {
+            outline: none;
+            border-color: #1e293b; /* Darker slate on focus */
+            box-shadow: 0 0 8px rgba(30, 41, 59, 0.3);
+        }
+
+        /* Confetti Canvas Styling */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind content */
+            pointer-events: none; /* Allow clicks through */
+        }
+
+        /* Final gifts list */
+        #gifts-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        #gifts-list li {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: #333; /* Dark text */
+            border: 2px solid #ccc;
+        }
+         #gifts-list li span { font-size: 2rem; } /* Emoji size */
+
+         /* Emoji input area */
+        #emoji-buttons button {
+             font-size: 1.8rem; /* Larger emoji on buttons */
+             padding: 8px 15px;
+             /* Use specific button colors */
+             background: linear-gradient(45deg, #64748b, #94a3b8); /* Slate */
+        }
+        #user-sequence {
+             background-color: #e2e8f0; /* Lighter slate background */
+             border-radius: 10px;
+             padding: 15px;
+             border: 3px dashed #94a3b8; /* Dashed slate border */
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-wrap: wrap;
+             gap: 10px; /* Space between emojis */
+             min-height: 60px;
+             font-size: 2.5rem; /* Larger emojis in sequence */
+        }
+        #emoji-sequence { /* Style the sequence display area */
+            font-size: 3rem;
+            margin: 20px 0;
+            text-align: center;
+            min-height: 50px;
+            color: #1e293b;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <div id="intro-screen">
+            <h1 class="birthday-title">
+                <span class="text-blue">HAPPY</span> <span class="text-yellow">BIRTHDAY</span> <span class="text-red-600">DAKSH!</span>
+            </h1>
+            <div class="manga-panel">
+                <h2 class="panel-title font-manga">DAKSH'S SUPER GIFT CHALLENGE!</h2>
+                <div class="speech-bubble">
+                    <p>Hey SUPER DAKSH! Ready for a HEROIC birthday mission? 😎</p>
+                    <p>I've hidden amazing gifts, but only the mightiest can claim them!</p>
+                    <p>Conquer 3 challenges to unlock the mystery vault!</p>
+                    <p>Then, choose 5 tiles - find the gifts, avoid the duds! Good luck! 🍀</p>
+                </div>
+                <div class="character">🦸‍♂️</div>
+                <button class="btn btn-start font-manga" onclick="startAdventure()">START MY MISSION!</button>
+            </div>
+        </div>
+
+        <div id="game-flow" class="hidden">
+            <div class="progress-tracker">
+                <div id="step1" class="progress-step active-step">Challenge 1</div>
+                <div id="step2" class="progress-step">Challenge 2</div>
+                <div id="step3" class="progress-step">Challenge 3</div>
+            </div>
+
+            <div id="game1" class="manga-panel">
+                <h3 class="panel-title font-manga">CHALLENGE 1: MATH AVENGER!</h3>
+                <div class="speech-bubble">
+                    <p>First task, hero! Solve this cryptic calculation! 🧮</p>
+                    <p>If you multiply a secret number by 5, then subtract 7, the result is 33. What's the secret number?</p>
+                </div>
+                <div class="character">🔢</div>
+                <div class="game-container">
+                    <input type="number" id="math-answer" class="game-input" placeholder="Enter number...">
+                    <button class="btn btn-check font-manga" onclick="checkMathAnswer()">CHECK ANSWER</button>
+                </div>
+            </div>
+
+            <div id="game2" class="manga-panel hidden">
+                <h3 class="panel-title font-manga">CHALLENGE 2: WORD WARRIOR!</h3>
+                <div class="speech-bubble">
+                    <p>Impressive! Now, unscramble these letters to reveal a tasty power-up! 📚</p>
+                    <p style="font-size: 24px; font-weight: bold; letter-spacing: 5px; text-align: center; color: #b21f1f;">A E T H L O C O C E</p>
+                </div>
+                <div class="character">🧩</div>
+                <div class="game-container">
+                    <input type="text" id="word-answer" class="game-input" placeholder="Unscramble...">
+                    <button class="btn btn-check font-manga" onclick="checkWordAnswer()">CHECK ANSWER</button>
+                </div>
+            </div>
+
+            <div id="game3" class="manga-panel hidden">
+                <h3 class="panel-title font-manga">CHALLENGE 3: MEMORY MASTERMIND!</h3>
+                <div class="speech-bubble">
+                    <p>Final test! Observe the sequence, then repeat it perfectly! 🧠</p>
+                    <div id="emoji-sequence"></div> <div id="emoji-input" class="hidden">
+                        <p style="font-weight: bold; margin-top: 15px;">Enter the sequence using the buttons below:</p>
+                    </div>
+                </div>
+                <div class="character">🤔</div>
+                <div class="game-container">
+                    <button id="show-sequence-btn" class="btn font-manga" onclick="showEmojiSequence()">SHOW SEQUENCE</button>
+                    <div id="user-sequence" class="hidden"></div>
+                     <div id="emoji-buttons" class="hidden" style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn font-manga" onclick="addEmoji('🍕')">🍕</button>
+                        <button class="btn font-manga" onclick="addEmoji('🎸')">🎸</button>
+                        <button class="btn font-manga" onclick="addEmoji('⚽')">⚽</button>
+                        <button class="btn font-manga" onclick="addEmoji('🚀')">🚀</button>
+                        <button class="btn font-manga" onclick="addEmoji('🌮')">🌮</button>
+                    </div>
+                    <button id="check-sequence-btn" class="btn btn-check font-manga hidden" onclick="checkEmojiSequence()">CHECK SEQUENCE</button>
+                    <button id="clear-emoji-btn" class="btn btn-clear font-manga hidden" onclick="clearEmojiSequence()">CLEAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="gift-selection" class="manga-panel hidden">
+            <h3 class="panel-title font-manga">THE VAULT IS OPEN!</h3>
+            <div class="speech-bubble">
+                <p>INCREDIBLE! You've passed all tests! 🎉</p>
+                <p>Now, choose 5 tiles from the vault below.</p>
+                <p>Will you find legendary gifts or empty space? Choose wisely!</p>
+                <p style="text-align: center; margin-top: 10px;"><span id="selections-remaining" class="font-manga" style="font-size: 1.8rem; color: #d32f2f;">5</span> selections left!</p>
+            </div>
+            <div class="character">💎</div>
+            <div class="game-board" id="gift-board">
+                </div>
+            <div style="text-align: center; margin-top: 20px;">
+                 <button id="finish-btn" class="btn btn-reveal font-manga hidden" onclick="showFinalResult()">REVEAL MY LOOT!</button>
+            </div>
+        </div>
+
+        <div id="final-result" class="manga-panel hidden">
+            <h3 class="panel-title font-manga">YOUR BIRTHDAY HAUL!</h3>
+            <div class="speech-bubble">
+                <p>MISSION ACCOMPLISHED, DAKSH! 🥳</p>
+                <p>Here are the treasures you secured:</p>
+                <ul id="gifts-list"></ul>
+                <p id="final-birthday-message" class="final-message-box"></p>
+            </div>
+            <div class="character">🏆</div>
+        </div>
+    </div>
+
+    <script>
+        // --- Game State Variables ---
+        let completedGames = 0;
+        let selectedTiles = 0;
+        const MAX_SELECTIONS = 5; // Max tiles user can pick
+        let selectedGifts = []; // Array to store actual gift objects won
+        let currentEmojiSequence = []; // The correct sequence for challenge 3
+        let userEmojiSequence = []; // The sequence entered by the user
+
+        // --- Constants ---
+        // Define the possible gifts
+        const GIFTS = [
+            {icon: "🍫", name: "Cosmic Chocolate Bar"},
+            {icon: "👟", name: "Super-Speed Sneakers"},
+            {icon: "👕", name: "Heroic Graphic T-Shirt"},
+            {icon: "🚁", name: "Stealth Drone Copter"},
+            {icon: "🏏", name: "Power Hitter Cricket Kit"}
+        ];
+        // Emojis available for the memory game sequence
+        const BUTTON_EMOJIS = ["🍕", "🎸", "⚽", "🚀", "🌮"];
+        const TOTAL_TILES = 9; // Total tiles on the gift board
+        const NUM_GIFTS_HIDDEN = 5; // Number of gifts hidden among tiles
+
+        // --- DOM Element References (Optional but can improve performance) ---
+        const introScreen = document.getElementById("intro-screen");
+        const gameFlowScreen = document.getElementById("game-flow");
+        const giftSelectionScreen = document.getElementById("gift-selection");
+        const finalResultScreen = document.getElementById("final-result");
+        // Add more references as needed...
+
+        // --- Confetti & Balloon Effect ---
+        const confettiCanvas = document.getElementById('confetti-canvas');
+        // Ensure confetti library is loaded before creating instance
+        let myConfetti;
+        if (typeof confetti !== 'undefined') {
+             myConfetti = confetti.create(confettiCanvas, {
+                resize: true,
+                useWorker: true
+            });
+        } else {
+            console.error("Confetti library not loaded!");
+        }
+
+        function fireConfettiAndBalloons(particleMultiplier = 1) {
+            if (!myConfetti) return; // Don't run if confetti failed to load
+
+            // Standard Confetti
+            myConfetti({
+                particleCount: 100 * particleMultiplier,
+                spread: 120,
+                origin: { y: 0.6 }
+            });
+            // Balloons (using emoji)
+            myConfetti({
+                particleCount: 25 * particleMultiplier, // Fewer balloons
+                spread: 100,
+                origin: { y: 0.7 },
+                angle: 90,
+                drift: 0.5,
+                gravity: -0.05, // Float up slower
+                ticks: 400, // Last longer
+                scalar: 1.6, // Bigger emojis
+                shapes: ['emoji'],
+                shapeOptions: {
+                    emoji: { value: ['🎈', '🎉', '🎂', '🎁'] } // More birthday emojis
+                }
+            });
+             // More confetti from sides
+            myConfetti({ particleCount: 50 * particleMultiplier, spread: 60, origin: { x: 0 } });
+            myConfetti({ particleCount: 50 * particleMultiplier, spread: 60, origin: { x: 1 } });
+        }
+
+        // --- Game Flow Functions ---
+
+        function startAdventure() {
+            introScreen.classList.add("hidden");
+            gameFlowScreen.classList.remove("hidden");
+            fireConfettiAndBalloons(0.5); // Initial smaller burst
+        }
+
+        function updateProgressTracker(stepNumber) {
+            // Reset all steps first (optional, but safer)
+            // document.querySelectorAll('.progress-step').forEach(step => {
+            //     step.classList.remove('active-step', 'completed-step');
+            // });
+
+            // Mark previous step as completed
+            if (stepNumber > 1) {
+                const prevStep = document.getElementById(`step${stepNumber - 1}`);
+                if (prevStep) {
+                    prevStep.classList.remove("active-step");
+                    prevStep.classList.add("completed-step");
+                }
+            }
+            // Mark current step as active (if it's 1, 2, or 3)
+            if (stepNumber >= 1 && stepNumber <= 3) {
+                const currentStep = document.getElementById(`step${stepNumber}`);
+                 if (currentStep) {
+                    currentStep.classList.remove("completed-step"); // Ensure it's not marked completed
+                    currentStep.classList.add("active-step");
+                 }
+            }
+             // If moving past step 3 (to gifts), mark step 3 completed
+             if (stepNumber > 3) {
+                 const step3 = document.getElementById('step3');
+                 if (step3) {
+                     step3.classList.remove("active-step");
+                     step3.classList.add("completed-step");
+                 }
+             }
+        }
+
+        // --- Challenge 1: Math ---
+        function checkMathAnswer() {
+            const answerInput = document.getElementById("math-answer");
+            const answer = parseInt(answerInput.value);
+            if (answer === 8) { // (8 * 5) - 7 = 33
+                showExplosion("MATH POWER! 💪");
+                document.getElementById("game1").classList.add("hidden");
+                document.getElementById("game2").classList.remove("hidden");
+                completedGames++;
+                updateProgressTracker(2); // Move to step 2
+                answerInput.value = ""; // Clear input
+            } else {
+                showExplosion("ZAP! TRY AGAIN! ⚡");
+                answerInput.focus(); // Keep focus on input
+            }
+        }
+
+        // --- Challenge 2: Word Scramble ---
+        function checkWordAnswer() {
+            const answerInput = document.getElementById("word-answer");
+            const answer = answerInput.value.trim().toLowerCase();
+            // Correct word is "chocolate"
+            if (answer === "chocolate") {
+                showExplosion("WORD WHIZ! ✍️");
+                document.getElementById("game2").classList.add("hidden");
+                document.getElementById("game3").classList.remove("hidden");
+                completedGames++;
+                updateProgressTracker(3); // Move to step 3
+                answerInput.value = ""; // Clear input
+            } else {
+                showExplosion("POW! NOT QUITE! 💥");
+                 answerInput.focus();
+            }
+        }
+
+        // --- Challenge 3: Memory Game ---
+        function showEmojiSequence() {
+            // Generate a random sequence of 4 unique emojis from the available ones
+            currentEmojiSequence = BUTTON_EMOJIS.sort(() => 0.5 - Math.random()).slice(0, 4);
+
+            const sequenceElement = document.getElementById("emoji-sequence");
+            const showButton = document.getElementById("show-sequence-btn");
+            const inputArea = document.getElementById("emoji-input");
+            const buttonsArea = document.getElementById("emoji-buttons");
+            const checkButton = document.getElementById("check-sequence-btn");
+            const clearButton = document.getElementById("clear-emoji-btn");
+            const userSequenceDisplay = document.getElementById("user-sequence");
+
+            // Reset user input and hide controls initially
+            clearEmojiSequence();
+            showButton.classList.add("hidden");
+            inputArea.classList.add("hidden");
+            buttonsArea.classList.add("hidden");
+            checkButton.classList.add("hidden");
+            clearButton.classList.add("hidden");
+            userSequenceDisplay.classList.add("hidden");
+
+            sequenceElement.textContent = ""; // Clear previous display
+            sequenceElement.style.opacity = 1; // Ensure visible
+
+            let i = 0;
+            const intervalId = setInterval(() => {
+                if (i < currentEmojiSequence.length) {
+                    sequenceElement.textContent = currentEmojiSequence[i]; // Show current emoji
+                    i++;
+                } else {
+                    // Sequence finished showing
+                    clearInterval(intervalId);
+                    // Hide the sequence after a brief pause
+                    setTimeout(() => {
+                        sequenceElement.style.opacity = 0;
+                        setTimeout(() => {
+                            sequenceElement.textContent = "❓❓❓❓"; // Show question marks
+                            sequenceElement.style.opacity = 1;
+                            // Reveal input elements
+                            inputArea.classList.remove("hidden");
+                            buttonsArea.classList.remove("hidden");
+                            checkButton.classList.remove("hidden");
+                            clearButton.classList.remove("hidden");
+                            userSequenceDisplay.classList.remove("hidden"); // Show user sequence area
+                        }, 300); // Wait for fade out
+                    }, 600); // Show last emoji for 0.6s
+                }
+            }, 1000); // Time each emoji is shown (1 second)
+        }
+
+        function addEmoji(emoji) {
+            // Add emoji only if the sequence isn't full
+            if (userEmojiSequence.length < currentEmojiSequence.length) {
+                userEmojiSequence.push(emoji);
+                document.getElementById("user-sequence").textContent = userEmojiSequence.join(" ");
+            }
+        }
+
+        function clearEmojiSequence() {
+            userEmojiSequence = [];
+            document.getElementById("user-sequence").textContent = "";
+        }
+
+        function checkEmojiSequence() {
+            // Ensure the user entered the correct number of emojis
+            if (userEmojiSequence.length !== currentEmojiSequence.length) {
+                showExplosion(`ENTER ALL ${currentEmojiSequence.length} EMOJIS! 🔢`);
+                return;
+            }
+
+            // Compare user sequence with the correct sequence
+            const correct = JSON.stringify(userEmojiSequence) === JSON.stringify(currentEmojiSequence);
+
+            if (correct) {
+                showExplosion("MEMORY MEGA-MIND! 🏆");
+                document.getElementById("game3").classList.add("hidden");
+                giftSelectionScreen.classList.remove("hidden");
+                completedGames++;
+                updateProgressTracker(4); // Mark step 3 completed, move past it
+                setupGiftBoard(); // Prepare the gift selection board
+            } else {
+                showExplosion("KA-POW! WRONG ORDER! 🔄");
+                clearEmojiSequence(); // Clear input for retry
+                // Reset UI to show the sequence again
+                document.getElementById("show-sequence-btn").classList.remove("hidden");
+                document.getElementById("emoji-input").classList.add("hidden");
+                document.getElementById("emoji-buttons").classList.add("hidden");
+                document.getElementById("check-sequence-btn").classList.add("hidden");
+                document.getElementById("clear-emoji-btn").classList.add("hidden");
+                 document.getElementById("user-sequence").classList.add("hidden");
+                document.getElementById("emoji-sequence").textContent = ""; // Clear question marks
+            }
+        }
+
+        // --- Gift Selection ---
+        function setupGiftBoard() {
+            const board = document.getElementById("gift-board");
+            board.innerHTML = ''; // Clear previous board
+            selectedTiles = 0; // Reset selection count
+            selectedGifts = []; // Reset selected gifts array
+            document.getElementById("selections-remaining").textContent = MAX_SELECTIONS;
+            document.getElementById("finish-btn").classList.add("hidden"); // Hide reveal button initially
+
+            // Create an array representing tile contents
+            // It will contain indices of GIFTS array (0 to NUM_GIFTS_HIDDEN - 1)
+            // and placeholders (-1) for non-gift tiles.
+            let tileContents = [];
+            for (let i = 0; i < NUM_GIFTS_HIDDEN; i++) {
+                tileContents.push(i); // Add gift indices
+            }
+            for (let i = 0; i < TOTAL_TILES - NUM_GIFTS_HIDDEN; i++) {
+                tileContents.push(-1); // Add non-gift placeholders
+            }
+
+            // Shuffle the tile contents randomly
+            tileContents.sort(() => Math.random() - 0.5);
+
+            // Create and append tiles to the board
+            for (let i = 0; i < TOTAL_TILES; i++) {
+                const tile = document.createElement("div");
+                tile.className = "tile";
+                tile.dataset.index = i; // Position index
+                tile.dataset.giftIndex = tileContents[i]; // Content (-1 or gift index)
+                // Set initial content (question mark)
+                tile.innerHTML = `<div class="tile-content">?</div>`;
+                // Add click listener
+                tile.addEventListener("click", selectTile);
+                board.appendChild(tile);
+            }
+        }
+
+        function selectTile(event) {
+            const tile = event.currentTarget;
+
+            // Ignore click if max selections reached or tile already flipped
+            if (selectedTiles >= MAX_SELECTIONS || tile.classList.contains("flipped")) {
+                return;
+            }
+
+            const giftIndex = parseInt(tile.dataset.giftIndex);
+
+            // Flip the tile visually
+            tile.classList.add("flipped");
+            tile.removeEventListener('click', selectTile); // Prevent re-clicking
+
+            const tileContent = tile.querySelector('.tile-content');
+
+            // Reveal content: gift icon or 'no gift' icon
+            if (giftIndex >= 0 && giftIndex < GIFTS.length) {
+                // It's a valid gift
+                tileContent.innerHTML = `<span class="gift-icon">${GIFTS[giftIndex].icon}</span>`;
+                selectedGifts.push(GIFTS[giftIndex]); // Add the found gift object
+            } else {
+                // No gift in this tile
+                tileContent.innerHTML = `<span class="gift-icon">💨</span>`; // Puff of smoke emoji
+            }
+
+            selectedTiles++;
+            // Update remaining selections display
+            document.getElementById("selections-remaining").textContent = MAX_SELECTIONS - selectedTiles;
+
+            // Check if max selections reached
+            if (selectedTiles >= MAX_SELECTIONS) {
+                document.getElementById("finish-btn").classList.remove("hidden"); // Show reveal button
+                // Disable remaining unflipped tiles
+                 document.querySelectorAll('#gift-board .tile:not(.flipped)').forEach(t => {
+                    t.style.cursor = 'default';
+                    t.removeEventListener('click', selectTile);
+                 });
+            }
+        }
+
+        // --- Final Result ---
+        function showFinalResult() {
+            giftSelectionScreen.classList.add("hidden");
+            finalResultScreen.classList.remove("hidden");
+
+            const giftsList = document.getElementById("gifts-list");
+            giftsList.innerHTML = ""; // Clear previous results
+
+            // Display the won gifts
+            if (selectedGifts.length === 0) {
+                const li = document.createElement("li");
+                li.innerHTML = `<span>😅</span> Oops! No treasures this time, but you conquered the challenges!`;
+                giftsList.appendChild(li);
+            } else {
+                selectedGifts.forEach(gift => {
+                    const li = document.createElement("li");
+                    // Display gift icon and name
+                    li.innerHTML = `<span>${gift.icon}</span> ${gift.name}`;
+                    giftsList.appendChild(li);
+                });
+            }
+
+            // Display final birthday message
+            document.getElementById("final-birthday-message").textContent =
+                "Happy Birthday, Daksh! Hope you have an absolutely SUPER day filled with joy, fun, and adventure! 🎉🎂🥳";
+
+            fireConfettiAndBalloons(1.5); // Big final burst!
+            // Optionally, keep confetti going
+            // setInterval(() => fireConfettiAndBalloons(0.2), 5000);
+        }
+
+        // --- Effects ---
+        function showExplosion(text) {
+            // Remove any existing explosion first
+            const existingExplosion = document.querySelector(".explosion");
+            if(existingExplosion) {
+                existingExplosion.remove();
+            }
+
+            // Create and add the new explosion element
+            const explosion = document.createElement("div");
+            explosion.className = "explosion";
+            explosion.textContent = text;
+            document.body.appendChild(explosion);
+
+            // Remove the element after the animation completes
+            setTimeout(() => {
+                 // Check if it's still in the DOM before removing
+                 if(explosion.parentNode === document.body) {
+                    document.body.removeChild(explosion);
+                 }
+            }, 800); // Matches animation duration
+        }
+
+        // --- Initial Setup ---
+        // Optional: Pre-load images or perform other setup tasks on window load
+        // window.onload = () => {
+        //     console.log("Page loaded. Ready for adventure!");
+        // };
+
+    </script>
+</body>
+</html>
