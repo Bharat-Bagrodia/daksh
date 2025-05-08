@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daksh ka Dum - Cosmic Quiz Show</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; 
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; 
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+            z-index: -1; 
+        }
+        
+        #planet1 {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 70% 30%, #f9c270 0%, #e86a33 100%);
+            top: 15%;
+            left: 10%;
+            box-shadow: 0 0 20px #e86a33;
+            animation: rotatePlanet 60s linear infinite; 
+        }
+        
+        #planet2 {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 40%, #70a1ff 0%, #1e3799 100%);
+            bottom: 10%;
+            right: 15%;
+            box-shadow: 0 0 30px #70a1ff;
+            animation: rotatePlanet 80s linear infinite reverse; 
+        }
+        
+        #planet3 {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 60% 40%, #ffcccc 0%, #ff6b81 100%);
+            top: 70%;
+            left: 20%;
+            box-shadow: 0 0 15px #ff6b81;
+            animation: rotatePlanet 30s linear infinite; 
+        }
+        
+        @keyframes rotatePlanet { 
+            0% { transform: rotate(0deg) translateX(0px); } 
+            50% { transform: rotate(180deg) translateX(10px); }
+            100% { transform: rotate(360deg) translateX(0px); }
+        }
+        
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            position: relative; 
+            z-index: 1; 
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+            overflow: hidden; 
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 25%,
+                transparent 50%
+            );
+            transform: rotate(45deg);
+            pointer-events: none;
+            z-index: -1; 
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem; 
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #a742f5, 0 0 20px #a742f5;
+            background: linear-gradient(to right, #ff7f50, #ff5f87, #c162de, #8862de, #6a82fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.3rem; 
+            margin-bottom: 1.5rem; 
+            color: #f1c40f;
+        }
+        
+        .game-content {
+            margin-bottom: 1.5rem; 
+        }
+        
+        .question {
+            font-size: 1.2rem; 
+            margin-bottom: 1.5rem; 
+            background: rgba(138, 43, 226, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: scale(1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            min-height: 100px; /* Ensure space for text */
+        }
+        
+        .question.active { 
+            transform: scale(1.05);
+            background: rgba(138, 43, 226, 0.4);
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem; 
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 0.5rem;
+            font-family: 'Exo 2', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #7d21e1, #3498db);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .percentage-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem; 
+        }
+        
+        .percentage-btn {
+            background: linear-gradient(135deg, #753a88, #cc2b5e);
+            color: white;
+            border: none;
+            padding: 0.6rem 0.4rem;
+            font-size: 0.9rem; 
+            width: calc(20% - 0.8rem); 
+            min-width: 55px; 
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .percentage-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(204, 43, 94, 0.7);
+        }
+        
+        .percentage-btn.selected {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(56, 239, 125, 0.7);
+        }
+        
+        .feedback {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem; 
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+            min-height: 50px; /* Ensure space for text */
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .feedback p {
+            font-size: 1.1rem; 
+            margin-bottom: 0.5rem; 
+        }
+        
+        /* Universe Progress Bar Styles */
+        .universe-progress-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            height: 30px; /* Fixed height for alignment */
+        }
+
+        .progress-star {
+            width: 20px;
+            height: 20px;
+            fill: rgba(255, 255, 255, 0.3); /* Dimmed upcoming */
+            transition: fill 0.5s ease, transform 0.3s ease;
+        }
+
+        .progress-star.completed {
+            fill: #f1c40f; /* Bright yellow for completed */
+            transform: scale(1.1);
+        }
+
+        .progress-star.current {
+            fill: #ff7f50; /* Orange for current */
+            animation: pulseCurrentStar 1.5s infinite ease-in-out;
+        }
+        
+        @keyframes pulseCurrentStar {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        .screen {
+            display: none;
+            animation: fadeInScreen 0.5s ease; 
+        }
+        
+        @keyframes fadeInScreen { 
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .screen.active {
+            display: block;
+        }
+        
+        .intro-screen img, .intro-screen svg { 
+            max-width: 80%;
+            margin: 1.5rem 0; 
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        
+        .end-screen {
+            text-align: center;
+        }
+        
+        .score-display {
+            font-size: 1.8rem; 
+            margin: 1.5rem 0;
+            color: #f1c40f;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+        }
+        
+        .end-message {
+            font-size: 1.2rem; 
+            margin: 1rem 0 1.5rem; 
+            line-height: 1.5;
+        }
+        
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10; 
+            display: none;
+        }
+        
+        .confetti {
+            position: absolute;
+            background: #f1c40f; 
+            animation: fall linear forwards;
+            /* Using clip-path for star shape */
+             width: 12px; /* Slightly larger confetti */
+            height: 12px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0; 
+            }
+        }
+        
+        .cosmic-daksh {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            pointer-events: none;
+            z-index: 0; 
+            transition: transform 0.5s ease-out; 
+        }
+        
+        #daksh1 {
+            top: 10%;
+            right: 5%;
+            animation: float 8s ease-in-out infinite; 
+        }
+        
+        #daksh2 {
+            bottom: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite 1s; 
+        }
+        
+        @keyframes float { 
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Fact Cards Styles */
+        .fact-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+            perspective: 1000px; /* For 3D flip effect */
+        }
+
+        .fact-card {
+            width: 180px;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            border-radius: 15px;
+        }
+
+        .fact-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .fact-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .fact-card-front {
+            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+        }
+        
+        .fact-card-front svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .fact-card-front h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .fact-card-back {
+            background: linear-gradient(135deg, #30cfd0, #330867);
+            transform: rotateY(180deg);
+            font-size: 0.9rem;
+            color: #eee;
+            overflow-y: auto; /* For longer facts */
+        }
+        .fact-card-back::-webkit-scrollbar {
+            width: 5px;
+        }
+        .fact-card-back::-webkit-scrollbar-thumb {
+            background: #f1c40f;
+            border-radius: 3px;
+        }
+
+
+        @media (max-width: 768px) {
+            body { padding: 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.1rem; }
+            .question { font-size: 1.1rem; min-height: 80px;}
+            .percentage-btn { width: calc(33.33% - 0.8rem); font-size: 0.8rem; }
+            .cosmic-daksh { width: 100px; height: 100px; }
+            #planet1 { width: 60px; height: 60px; }
+            #planet2 { width: 90px; height: 90px; }
+            #planet3 { width: 30px; height: 30px; }
+            .btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+            .feedback p { font-size: 1rem; }
+            .score-display { font-size: 1.5rem; }
+            .end-message { font-size: 1.1rem; }
+            .fact-card { width: 150px; height: 220px; }
+            .fact-card-front h4 { font-size: 1rem; }
+            .fact-card-back { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1rem; }
+            .question { font-size: 1rem; padding: 0.8rem; min-height: 70px;}
+            .percentage-options { gap: 0.5rem; }
+            .percentage-btn { width: calc(50% - 0.5rem); min-width: 50px; padding: 0.5rem 0.3rem; }
+            .cosmic-daksh { width: 70px; height: 70px; }
+            #planet1 { width: 40px; height: 40px; }
+            #planet2 { width: 60px; height: 60px; }
+            #planet3 { width: 20px; height: 20px; }
+            .universe-progress-container { gap: 5px; }
+            .progress-star { width: 15px; height: 15px; }
+            .fact-cards-container { flex-direction: column; align-items: center; } /* Stack cards on very small screens */
+            .fact-card { width: 80%; max-width: 200px; height: auto; min-height:180px; margin-bottom:10px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="planet" id="planet1"></div>
+    <div class="planet" id="planet2"></div>
+    <div class="planet" id="planet3"></div>
+    
+    <div class="cosmic-daksh" id="daksh1">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <circle cx="50" cy="50" r="30" fill="url(#dakshGradient)" />
+            <path d="M50 25 C60 45 40 45 50 25" fill="#fff" /> 
+            <circle cx="42" cy="45" r="4" fill="#fff" /> 
+            <circle cx="58" cy="45" r="4" fill="#fff" /> 
+            <path d="M40 60 Q50 70 60 60" stroke="#fff" stroke-width="2" fill="none" />
+            <defs>
+                <radialGradient id="dakshGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" style="stop-color:#a742f5; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#6a82fb; stop-opacity:1" />
+                </radialGradient>
+            </defs>
+        </svg>
+    </div>
+    <div class="cosmic-daksh" id="daksh2">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <circle cx="50" cy="50" r="30" fill="url(#dakshGradient2)" />
+            <path d="M50 30 C60 45 40 45 50 30" fill="#fff" /> 
+            <circle cx="42" cy="45" r="4" fill="#fff" /> 
+            <circle cx="58" cy="45" r="4" fill="#fff" /> 
+            <path d="M35 60 Q50 75 65 60" stroke="#fff" stroke-width="2" fill="none" />
+            <defs>
+                <radialGradient id="dakshGradient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" style="stop-color:#ff7f50; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ff5f87; stop-opacity:1" />
+                </radialGradient>
+            </defs>
+        </svg>
+    </div>
+    
+    <div class="confetti-container" id="confetti-container"></div>
+    
+    <div class="container">
+        <div class="screen intro-screen active" id="intro-screen">
+            <h1>Daksh ka Dum!</h1>
+            <h2>The Cosmic Quiz Show</h2>
+            <p>Welcome to the most stellar quiz show in the universe! Think you know the cosmic power of Daksh? Test your knowledge through the galaxies!</p>
+            <div style="margin: 20px 0;"> 
+                <svg viewBox="0 0 200 200" width="120" height="120"> 
+                    <circle cx="100" cy="100" r="80" fill="url(#dakshGradient3)" />
+                    <circle cx="75" cy="85" r="8" fill="#fff" /> 
+                    <circle cx="125" cy="85" r="8" fill="#fff" /> 
+                    <path d="M70 130 Q100 150 130 130" stroke="#fff" stroke-width="5" fill="none" /> 
+                    <circle cx="100" cy="100" r="90" stroke="#f1c40f" stroke-width="5" fill="none" stroke-dasharray="20 5" >
+                        <animateTransform 
+                            attributeName="transform" 
+                            type="rotate" 
+                            from="0 100 100" 
+                            to="360 100 100" 
+                            dur="20s" 
+                            repeatCount="indefinite"
+                        />
+                    </circle>
+                    <defs>
+                        <radialGradient id="dakshGradient3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:#a742f5; stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#6a82fb; stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
+            <button class="btn" id="start-btn">Launch Into Space!</button>
+        </div>
+        
+        <div class="screen game-screen" id="game-screen">
+            <div class="universe-progress-container" id="universe-progress-container">
+                </div>
+            <div class="game-content">
+                <div class="question" id="question">Loading question...</div>
+                <div class="percentage-options" id="percentage-options">
+                    </div>
+                <div class="feedback" id="feedback">
+                    </div>
+            </div>
+            <button class="btn" id="next-btn" style="display: none;">Next Question</button>
+        </div>
+        
+        <div class="screen end-screen" id="end-screen">
+            <h1>Cosmic Victory!</h1>
+            <div class="score-display" id="score-display">Calculating score...</div>
+            <div class="end-message">
+                <p>You clearly understand the cosmic DUM of DAKSH! 🌟</p>
+                <p>The universe acknowledges your deep connection with the legendary Daksh!</p>
+            </div>
+            <div class="fact-cards-container" id="fact-cards-container">
+                </div>
+            <button class="btn" id="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        // Game data: Array of question objects
+        const questions = [
+            // ... (Questions remain the same as previous version)
+             {
+                text: "What percentage of the universe's coolness is concentrated in Daksh's smile?",
+                answers: { 
+                    "20%": "Only 20%? Scientists have measured at least 85%! His smile literally causes nearby stars to shine brighter!",
+                    "40%": "You're being modest! NASA confirmed it's at least 90%! Astronomers use Daksh's smile as a reference point for measuring cosmic brilliance!",
+                    "60%": "Getting warmer! The Hubble telescope actually measured 95%! Daksh's smile is so powerful it's visible from Neptune!",
+                    "80%": "Almost there! The International Space Station reports 98%! They use photos of Daksh to power their solar panels!",
+                    "100%": "CORRECT! 100%! Black holes are just trying to imitate Daksh's gravitational charisma!"
+                },
+                correctPercentage: "100%" 
+            },
+            {
+                text: "How often does Daksh's humor break the laws of physics?",
+                answers: {
+                    "20%": "Really? Einstein's notebooks mention Daksh's jokes in at least 75% of his calculations!",
+                    "40%": "Too low! Stephen Hawking dedicated 85% of his research to explaining Daksh's cosmic humor!",
+                    "60%": "Getting closer! NASA confirms Daksh's jokes cause quantum fluctuations 90% of the time!",
+                    "80%": "Almost right! The Space-Time Continuum reorganizes itself around Daksh's punchlines 95% of the time!",
+                    "100%": "SPOT ON! Even gravity takes a break to laugh at Daksh's jokes!"
+                },
+                correctPercentage: "100%"
+            },
+            {
+                text: "What percentage of superheroes have requested Daksh's autograph?",
+                answers: {
+                    "20%": "Too low! At least 70% of the Justice League has Daksh's signature framed in their headquarters!",
+                    "40%": "Underestimated! 80% of the Avengers have Daksh's phone number on speed dial for emergency awesomeness!",
+                    "60%": "Getting closer! 90% of superheroes have asked Daksh for training tips!",
+                    "80%": "Almost there! 95% of caped crusaders have photos with Daksh in their secret lairs!",
+                    "100%": "CORRECT! Every superhero has a poster of Daksh on their wall for inspiration!"
+                },
+                correctPercentage: "100%"
+            },
+            {
+                text: "What's the probability that Daksh can finish a chocolate bar faster than light travels?",
+                answers: {
+                    "20%": "Too cautious! Physicists have recorded Daksh's chocolate-eating speed at 75% faster than light!",
+                    "40%": "Not high enough! Einstein's lost equations predicted Daksh's chocolate consumption at 85% beyond lightspeed!",
+                    "60%": "Getting warmer! NASA uses Daksh's chocolate-eating technique to study wormholes with 90% accuracy!",
+                    "80%": "Almost there! The Large Hadron Collider measured Daksh's chocolate particle acceleration at 95% of universal maximum!",
+                    "100%": "EXACTLY RIGHT! Daksh invented a new dimension just for optimized chocolate consumption!"
+                },
+                correctPercentage: "100%"
+            },
+            {
+                text: "What percentage of the stars in the night sky twinkle extra bright when Daksh looks at them?",
+                answers: {
+                    "20%": "Too modest! Astronomers have documented at least 70% of stars performing special light shows for Daksh!",
+                    "40%": "Not enough cosmic respect! 80% of constellations rearrange themselves when Daksh is stargazing!",
+                    "60%": "Getting closer! The International Astronomical Union confirms 90% of celestial bodies show off for Daksh!",
+                    "80%": "Almost there! 95% of galaxies have petitioned to be viewed through Daksh's telescope!",
+                    "100%": "COSMIC TRUTH! Every star in the universe has a special twinkle reserved just for Daksh!"
+                },
+                correctPercentage: "100%"
+            },
+             {
+                text: "What percentage of video games secretly include Daksh as the ultimate hidden character?",
+                answers: {
+                    "20%": "Too low! Gaming historians have confirmed Daksh Easter eggs in at least 75% of all games!",
+                    "40%": "Not enough digital recognition! 85% of game developers keep a Daksh reference in their code!",
+                    "60%": "Getting warmer! The Gaming Hall of Fame acknowledges Daksh's influence in 90% of bestselling titles!",
+                    "80%": "Very close! 95% of game characters were inspired by Daksh's legendary moves!",
+                    "100%": "ABSOLUTELY RIGHT! Every game has a bit of Daksh's awesomeness coded into its DNA!"
+                },
+                correctPercentage: "100%"
+            },
+            {
+                text: "What percentage of pizza toppings were actually invented by Daksh in his cosmic kitchen?",
+                answers: {
+                    "20%": "Too modest! The Culinary Space Institute credits Daksh with at least 70% of topping innovations!",
+                    "40%": "Underestimated! The Pizza Hall of Fame acknowledges Daksh's contribution to 85% of modern toppings!",
+                    "60%": "Getting closer! Famous chefs have traced 90% of gourmet pizza concepts back to Daksh's recipes!",
+                    "80%": "Almost there! The International Pizza Authority has confirmed Daksh's influence on 95% of topping combinations!",
+                    "100%": "ABSOLUTELY CORRECT! Every delicious pizza topping has Daksh's interstellar flavor signature!"
+                },
+                correctPercentage: "100%"
+            }
+        ];
+
+        // Celestial Facts Data
+        const celestialFacts = [
+            {
+                name: "The Sun",
+                svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="url(#sunGradient)"/><defs><radialGradient id="sunGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:#FFD700;"/><stop offset="100%" style="stop-color:#FFA500;"/></radialGradient></defs></svg>`,
+                fact: "The Sun accounts for 99.86% of the mass in our solar system. It's so large that about 1.3 million Earths could fit inside it!"
+            },
+            {
+                name: "Jupiter",
+                svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="url(#jupiterGradient)"/><ellipse cx="50" cy="65" rx="25" ry="10" fill="rgba(200,160,120,0.7)"/><ellipse cx="50" cy="40" rx="30" ry="12" fill="rgba(222,200,170,0.8)"/><defs><radialGradient id="jupiterGradient" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#E0C8A0;"/><stop offset="100%" style="stop-color:#A88868;"/></radialGradient></defs></svg>`,
+                fact: "Jupiter is the largest planet in our Solar System. Its Great Red Spot is a gigantic storm, bigger than Earth, that has been raging for hundreds of years."
+            },
+            {
+                name: "Mars",
+                svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="#E57373"/><circle cx="40" cy="35" r="8" fill="#D32F2F" opacity="0.5"/><circle cx="60" cy="60" r="12" fill="#B71C1C" opacity="0.4"/></svg>`,
+                fact: "Mars is known as the Red Planet due to iron oxide (rust) on its surface. It has the tallest volcano and the deepest, longest canyon in our solar system."
+            },
+            {
+                name: "Saturn",
+                svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#F0E68C"/><ellipse cx="50" cy="50" rx="45" ry="15" stroke="#D2B48C" stroke-width="5" fill="none" transform="rotate(-20 50 50)"/><ellipse cx="50" cy="50" rx="38" ry="12" stroke="#CD853F" stroke-width="4" fill="none" transform="rotate(-20 50 50)"/></svg>`,
+                fact: "Saturn is famous for its stunning rings, which are made of ice particles, rocky debris, and dust. It's the least dense planet; it would float in water!"
+            },
+            {
+                name: "Orion Nebula",
+                svg: `<svg viewBox="0 0 100 100"><path d="M20 80 Q 50 20 80 80 Q 50 50 20 80 Z" fill="url(#nebulaGradient)"/><circle cx="50" cy="55" r="3" fill="#FFF"/><circle cx="45" cy="60" r="2" fill="#FFF"/><circle cx="55" cy="50" r="2.5" fill="#FFF"/><defs><radialGradient id="nebulaGradient"><stop offset="0%" stop-color="rgba(255,105,180,0.8)"/><stop offset="50%" stop-color="rgba(75,0,130,0.7)"/><stop offset="100%" stop-color="rgba(0,0,50,0.6)"/></radialGradient></defs></svg>`,
+                fact: "The Orion Nebula is a stellar nursery, a vast cloud of gas and dust where new stars are being born. It's one of the brightest nebulae and visible to the naked eye."
+            }
+        ];
+
+
+        // Game state variables
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        // DOM element references
+        const introScreen = document.getElementById('intro-screen');
+        const gameScreen = document.getElementById('game-screen');
+        const endScreen = document.getElementById('end-screen');
+        const questionElement = document.getElementById('question');
+        const percentageOptionsElement = document.getElementById('percentage-options');
+        const feedbackElement = document.getElementById('feedback');
+        const nextButton = document.getElementById('next-btn');
+        // const progressBar = document.getElementById('progress-bar'); // Removed, replaced by universe progress
+        const universeProgressContainer = document.getElementById('universe-progress-container');
+        const scoreDisplay = document.getElementById('score-display');
+        const startButton = document.getElementById('start-btn');
+        const restartButton = document.getElementById('restart-btn');
+        const confettiContainer = document.getElementById('confetti-container');
+        const starsContainer = document.getElementById('stars'); 
+        const factCardsContainer = document.getElementById('fact-cards-container');
+
+
+        // Function to create stars for the background
+        function createStars() {
+            const numberOfStars = 200; 
+            starsContainer.innerHTML = ''; 
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                const size = Math.random() * 2 + 1; 
+                star.style.width = `${size}px`;
+                star.style.height = star.style.width;
+                star.style.animationDelay = `${Math.random() * 4}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Function to create confetti effect (enhanced)
+        function createConfetti() {
+            confettiContainer.style.display = 'block';
+            confettiContainer.innerHTML = ''; 
+            const colors = ['#f1c40f', '#3498db', '#e74c3c', '#2ecc71', '#9b59b6', '#1abc9c', '#ffffff'];
+            const numConfetti = 250; // Increased number of confetti
+            
+            for (let i = 0; i < numConfetti; i++) { 
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}%`; 
+                confetti.style.top = `${Math.random() * -50 - 10}px`; // Start further above screen
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8})`; // Vary scale
+                const size = Math.random() * 10 + 6; // Slightly larger and more varied size
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.opacity = Math.random() * 0.6 + 0.4; 
+                confetti.style.animationDuration = `${Math.random() * 4 + 3}s`; // Fall duration 3-7s
+                confetti.style.animationDelay = `${Math.random() * 1}s`; // Stagger start more
+                
+                confettiContainer.appendChild(confetti);
+                
+                setTimeout(() => {
+                    if (confetti.parentNode) { 
+                       confetti.remove();
+                    }
+                }, 7000); 
+            }
+            
+            setTimeout(() => {
+                confettiContainer.style.display = 'none';
+            }, 7000);
+        }
+        
+        // Function to update Universe Style Progress
+        function updateUniverseProgress() {
+            universeProgressContainer.innerHTML = ''; // Clear previous progress stars
+            for (let i = 0; i < questions.length; i++) {
+                const starSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                starSvg.setAttribute("viewBox", "0 0 24 24");
+                starSvg.classList.add("progress-star");
+
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", "M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.449l-7.416 4.004 1.48-8.279-6.064-5.828 8.332-1.151z");
+                starSvg.appendChild(path);
+
+                if (i < currentQuestionIndex) {
+                    starSvg.classList.add('completed');
+                } else if (i === currentQuestionIndex) {
+                    starSvg.classList.add('current');
+                }
+                universeProgressContainer.appendChild(starSvg);
+            }
+        }
+
+
+        // Initialize the game
+        function initGame() {
+            createStars(); 
+            
+            startButton.addEventListener('click', startGame);
+            nextButton.addEventListener('click', showNextQuestion);
+            restartButton.addEventListener('click', restartGame);
+        }
+
+        // Function to start the game
+        function startGame() {
+            currentQuestionIndex = 0; 
+            score = 0; 
+            introScreen.classList.remove('active');
+            endScreen.classList.remove('active'); 
+            factCardsContainer.innerHTML = ''; // Clear fact cards from previous game
+            gameScreen.classList.add('active');
+            updateUniverseProgress(); // Initialize universe progress
+            showQuestion(); 
+        }
+
+        // Function to display the current question and options
+        function showQuestion() {
+            feedbackElement.style.display = 'none';
+            feedbackElement.innerHTML = ''; 
+            nextButton.style.display = 'none'; 
+            questionElement.classList.remove('active'); 
+            
+            // Update universe progress for the current question
+            updateUniverseProgress();
+            
+            const currentQuestionData = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestionData.text;
+            setTimeout(() => questionElement.classList.add('active'), 10); 
+            
+            percentageOptionsElement.innerHTML = '';
+            const percentages = Object.keys(currentQuestionData.answers);
+            
+            percentages.forEach(percentage => {
+                const button = document.createElement('button');
+                button.classList.add('percentage-btn');
+                button.textContent = percentage;
+                button.addEventListener('click', () => selectPercentage(percentage, button));
+                percentageOptionsElement.appendChild(button);
+            });
+        }
+
+        // Function to handle a selected percentage
+        function selectPercentage(percentage, clickedButton) {
+            const buttons = percentageOptionsElement.querySelectorAll('.percentage-btn');
+            buttons.forEach(button => {
+                button.classList.remove('selected'); 
+                button.disabled = true; 
+            });
+            
+            clickedButton.classList.add('selected');
+            showFeedback(percentage);
+        }
+
+        // Function to display feedback for the answer
+        function showFeedback(selectedPercentage) {
+            const currentQuestionData = questions[currentQuestionIndex];
+            const feedbackText = currentQuestionData.answers[selectedPercentage];
+            
+            feedbackElement.innerHTML = `<p>${feedbackText}</p>`;
+            feedbackElement.style.display = 'block';
+            
+            createMiniStarBurst(feedbackElement); 
+            nextButton.style.display = 'inline-block';
+            
+            const percentageValue = parseInt(selectedPercentage.replace('%', ''));
+            if (!isNaN(percentageValue)) {
+                score += percentageValue / 20; 
+            }
+        }
+
+        // Function to proceed to the next question
+        function showNextQuestion() {
+            currentQuestionIndex++; 
+            if (currentQuestionIndex >= questions.length) {
+                updateUniverseProgress(); // Mark last question as completed
+                endGame(); 
+            } else {
+                showQuestion(); 
+            }
+        }
+        
+        // Function to display Celestial Fact Cards
+        function displayFactCards() {
+            factCardsContainer.innerHTML = ''; // Clear previous cards
+            // Shuffle facts and take a few (e.g., 3 or all if fewer)
+            const shuffledFacts = [...celestialFacts].sort(() => 0.5 - Math.random());
+            const factsToShow = shuffledFacts.slice(0, Math.min(3, shuffledFacts.length));
+
+
+            factsToShow.forEach(factData => {
+                const card = document.createElement('div');
+                card.classList.add('fact-card');
+
+                const front = document.createElement('div');
+                front.classList.add('fact-card-face', 'fact-card-front');
+                front.innerHTML = `${factData.svg}<h4>${factData.name}</h4><p style="font-size:0.7em; opacity:0.7;">(Click to reveal fact)</p>`;
+                
+                const back = document.createElement('div');
+                back.classList.add('fact-card-face', 'fact-card-back');
+                back.innerHTML = `<h4>${factData.name}</h4><p>${factData.fact}</p>`;
+
+                card.appendChild(front);
+                card.appendChild(back);
+
+                card.addEventListener('click', () => {
+                    card.classList.toggle('flipped');
+                });
+                factCardsContainer.appendChild(card);
+            });
+        }
+
+
+        // Function to end the game
+        function endGame() {
+            gameScreen.classList.remove('active'); 
+            endScreen.classList.add('active');   
+            
+            const maxScore = questions.length * 5;
+            const finalScore = Math.round(score); 
+            scoreDisplay.textContent = `Your Cosmic Score: ${finalScore}/${maxScore}`;
+            
+            createConfetti(); 
+            displayFactCards(); // Display the fact cards
+        }
+
+        // Function to restart the game
+        function restartGame() {
+            currentQuestionIndex = 0;
+            score = 0;
+            
+            endScreen.classList.remove('active');
+            factCardsContainer.innerHTML = ''; // Clear fact cards
+            gameScreen.classList.add('active'); 
+            updateUniverseProgress(); // Reset universe progress display
+            showQuestion(); 
+        }
+
+        // Function to create a mini star burst effect
+        function createMiniStarBurst(parentElement) {
+            const burstContainer = document.createElement('div');
+            burstContainer.style.position = 'absolute';
+            burstContainer.style.top = '50%';
+            burstContainer.style.left = '50%';
+            burstContainer.style.width = '1px'; 
+            burstContainer.style.height = '1px';
+            burstContainer.style.transform = 'translate(-50%, -50%)';
+            burstContainer.style.pointerEvents = 'none';
+            burstContainer.style.zIndex = '10'; 
+            
+            const numStars = 25; // Slightly more stars for burst
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                const angle = Math.random() * Math.PI * 2; 
+                const distance = Math.random() * 90 + 50;  
+                const size = Math.random() * 5 + 2;       
+                const duration = Math.random() * 0.9 + 0.5; 
+                
+                star.style.position = 'absolute';
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.background = '#f1c40f'; 
+                star.style.borderRadius = '50%';
+                star.style.boxShadow = '0 0 8px #f1c40f, 0 0 4px #fff'; 
+                
+                star.style.transform = 'translate(-50%, -50%) scale(1)';
+                star.style.opacity = '1';
+                star.style.setProperty('--end-x', `${Math.cos(angle) * distance}px`);
+                star.style.setProperty('--end-y', `${Math.sin(angle) * distance}px`);
+                
+                star.style.animation = `starBurst ${duration}s ease-out forwards`;
+                
+                burstContainer.appendChild(star);
+            }
+            
+            parentElement.appendChild(burstContainer); 
+            
+            setTimeout(() => {
+                if (burstContainer.parentNode) {
+                    burstContainer.remove();
+                }
+            }, Math.max(...Array.from(burstContainer.children).map(s => parseFloat(s.style.animationDuration) * 1000)) + 100); 
+        }
+
+        if (!document.getElementById('starBurstAnimation')) {
+            const styleElement = document.createElement('style');
+            styleElement.id = 'starBurstAnimation'; 
+            styleElement.textContent = `
+                @keyframes starBurst {
+                    0% { 
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 1;
+                    }
+                    100% { 
+                        transform: translate(calc(-50% + var(--end-x)), calc(-50% + var(--end-y))) scale(0);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(styleElement);
+        }
+
+        window.addEventListener('load', initGame);
+    </script>
+</body>
+</html>
