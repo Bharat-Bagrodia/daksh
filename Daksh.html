@@ -3,392 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦸‍♂️ Daksh's SUPER Gift Challenge! 🎁</title>
+    <title>🌠 Daksh's COSMIC Birthday Quest! 🌌</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <style>
         body {
-            /* Using Poppins for readability on smaller text, Bangers for headings/buttons */
             font-family: 'Poppins', sans-serif;
-            /* Marvel-inspired gradient background from the landing page */
-            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%); /* Dark Blue -> Red -> Gold */
+            background: linear-gradient(135deg, #000000 0%, #0c0c38 30%, #2a1a5c 70%, #5a398b 100%);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             margin: 0;
-            padding: 15px; /* Padding for smaller screens */
-            color: #333; /* Dark text for contrast on white panels */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding: 15px;
+            color: #e0e0e0; /* Light grey/white for text on dark background */
+            overflow-x: hidden;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
             max-width: 800px;
+            width: 100%;
             margin: 20px auto;
             padding: 0 15px;
         }
 
-        /* Comic book panel style */
-        .manga-panel {
-            background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent white card */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .manga-panel { /* Changed to space-station panel */
+            background-color: rgba(10, 20, 50, 0.85); /* Deep blue, semi-transparent */
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(173, 216, 230, 0.5), 0 0 0 3px #7DF9FF, inset 0 0 15px rgba(173, 216, 230, 0.3); /* Neon blue glow */
             padding: 30px 40px;
             margin-bottom: 30px;
-            border: 3px solid #333; /* Comic book panel border */
-            position: relative; /* Needed for absolute positioning of characters */
+            border: 2px solid #7DF9FF; /* Bright cyan border */
+            position: relative;
         }
 
-        /* Apply Bangers font to titles and specific elements */
-        .font-manga {
-            font-family: 'Bangers', cursive;
-            letter-spacing: 1px;
-            font-weight: normal; /* Bangers has built-in weight */
+        .font-manga { /* Changed to space font */
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1.5px;
+            font-weight: normal; /* Orbitron is often bold by default */
         }
+        .font-bangers { font-family: 'Bangers', cursive; } /* Keep Bangers for specific titles if needed */
 
-        /* Main title style */
+
         .birthday-title {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(40px, 10vw, 70px); /* Responsive font size */
+            font-family: 'Bangers', cursive; /* Keep Bangers for this main title for impact */
+            font-size: clamp(38px, 10vw, 60px);
             text-align: center;
-            margin: 30px 0;
-            /* Multi-color title like the landing page */
-            color: #d32f2f; /* Default red */
-            text-shadow: 3px 3px 0px #000; /* Black shadow for comic effect */
-            animation: bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+            margin: 25px 0;
+            color: #FFD700; /* Gold */
+            text-shadow: 3px 3px 0px #8A2BE2, 5px 5px 0px rgba(0,0,0,0.5); /* Blue-violet and black shadow */
+            animation: pulseTitle 2s infinite alternate;
         }
-        .birthday-title .text-blue { color: #1976d2; } /* Blue part */
-        .birthday-title .text-yellow { color: #fbc02d; } /* Yellow part */
+        .birthday-title .text-blue { color: #7DF9FF; } /* Neon Cyan */
+        .birthday-title .text-yellow { color: #F0E68C; } /* Khaki (starlight) */
 
-        @keyframes bounce {
-            0% { transform: translateY(0) rotate(-1deg); }
-            100% { transform: translateY(-10px) rotate(1deg); }
+        @keyframes pulseTitle {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.05); opacity: 1; }
         }
 
-        /* Panel titles */
         .panel-title {
-             font-family: 'Bangers', cursive;
-             font-size: 2.5rem; /* Large panel titles */
+             font-family: 'Orbitron', sans-serif;
+             font-weight: 700;
+             font-size: clamp(1.8rem, 5vw, 2.5rem);
              text-align: center;
-             color: #b21f1f; /* Marvel Red */
-             text-shadow: 2px 2px 0 #ffffff, 3px 3px 0 rgba(0,0,0,0.1);
-             margin-bottom: 20px;
+             color: #FFD700; /* Gold */
+             text-shadow: 1px 1px 0 #000, 2px 2px 0 #8A2BE2, 0 0 10px #FFD700; /* Black, purple, gold glow */
+             margin-bottom: 25px;
              letter-spacing: 1px;
         }
 
-        /* Character styling */
-        .character {
-            font-size: 90px; /* Slightly smaller */
+        .character { /* Space character */
+            font-size: clamp(60px, 12vw, 90px);
             position: absolute;
             bottom: 15px;
             right: 20px;
-            opacity: 0.85;
-            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
-            transform: rotate(5deg); /* Slight tilt */
+            opacity: 0.9;
+            filter: drop-shadow(3px 3px 8px #7DF9FF); /* Cyan glow */
+            transform: rotate(5deg) scale(1);
+            animation: floatCharacter 3s ease-in-out infinite alternate;
+        }
+        @keyframes floatCharacter {
+            from { transform: translateY(0px) rotate(3deg) scale(1); }
+            to { transform: translateY(-10px) rotate(-3deg) scale(1.05); }
         }
 
-        /* Speech bubble styling */
-        .speech-bubble {
+        .speech-bubble { /* Comms panel */
             position: relative;
-            background: #f1f5f9; /* Light grey-blue background */
+            background: rgba(0, 5, 20, 0.7); /* Very dark blue, transparent */
             border-radius: 15px;
-            padding: 20px;
-            margin: 15px 70px 20px 0; /* Keep margin for character */
-            border: 3px solid #64748b; /* Slate border */
-            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-            line-height: 1.6;
-            font-weight: 600; /* Make text slightly bolder */
-            color: #1e293b; /* Darker slate text */
+            padding: 20px 25px;
+            margin: 15px 75px 25px 0;
+            border: 2px solid #30D5C8; /* Turquoise */
+            box-shadow: 0 0 10px rgba(48, 213, 200, 0.5), inset 0 0 8px rgba(48,213,200,0.3);
+            line-height: 1.65;
+            font-weight: 600;
+            color: #E6E6FA; /* Lavender (text color) */
+            font-family: 'Poppins', sans-serif;
         }
-        .speech-bubble p:first-child { font-size: 1.1em; } /* Emphasize first line */
+        .speech-bubble p:first-child {
+            font-size: 1.1em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: #FFD700; /* Gold for emphasis */
+         }
 
-        /* Speech bubble tail */
-        .speech-bubble:after, .speech-bubble:before { display: none; } /* Remove old tail */
-        /* New simpler tail */
-        .speech-bubble::after {
+        .speech-bubble::after { /* Comms panel tail */
             content: '';
             position: absolute;
-            bottom: 20px; /* Position near bottom right */
-            right: -25px; /* Point towards character */
+            bottom: 25px;
+            right: -22px;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 15px 0 15px 30px; /* Triangle shape */
-            border-color: transparent transparent transparent #64748b; /* Border color */
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent #30D5C8;
         }
          .speech-bubble::before {
              content: '';
              position: absolute;
-             bottom: 20px;
-             right: -21px; /* Slightly inside border */
+             bottom: 25px;
+             right: -20px;
              width: 0;
              height: 0;
              border-style: solid;
-             border-width: 15px 0 15px 30px;
-             border-color: transparent transparent transparent #f1f5f9; /* Background color */
-             z-index: 1; /* Cover border */
+             border-width: 15px 0 15px 25px;
+             border-color: transparent transparent transparent rgba(0, 5, 20, 0.7);
+             z-index: 1;
          }
 
-
-        /* Marvel-style Buttons */
         .btn {
-            font-family: 'Bangers', cursive; /* Use Bangers font */
-            display: inline-block; /* Allow side-by-side */
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            display: inline-block;
             padding: 12px 25px;
             margin: 10px 5px;
-            border-radius: 10px; /* Sharper corners */
-            font-size: 1.4rem; /* Larger font for Bangers */
-            font-weight: normal;
+            border-radius: 8px;
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
             text-align: center;
             text-decoration: none;
-            color: white;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid black;
-            text-transform: uppercase; /* Uppercase for comic style */
+            color: #0A0A23; /* Dark blue text */
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 0px #00000055, 0 0 10px rgba(125, 249, 255, 0.5); /* Shadow and glow */
+            border: 2px solid #7DF9FF; /* Neon cyan border */
+            text-transform: uppercase;
             cursor: pointer;
-             /* Default blue button */
-            background: linear-gradient(45deg, #1976d2, #64b5f6); /* Blue (Captain America) */
+            background: linear-gradient(45deg, #7DF9FF, #A0FFFF); /* Cyan gradient */
         }
         .btn:hover {
-            transform: translateY(-4px) scale(1.03); /* More lift and slight scale */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 0px #00000077, 0 0 15px rgba(125, 249, 255, 0.8);
+            background: linear-gradient(45deg, #A0FFFF, #C0FFFF); /* Lighter cyan */
         }
          .btn:active {
-            transform: translateY(1px) scale(0.98); /* Press down */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 2px 0px #00000033, 0 0 8px rgba(125, 249, 255, 0.4);
         }
-        /* Specific button colors */
-        .btn-start { background: linear-gradient(45deg, #16a34a, #4ade80); } /* Green */
-        .btn-check { background: linear-gradient(45deg, #d32f2f, #ff7043); } /* Red/Orange */
-        .btn-reveal { background: linear-gradient(45deg, #fbc02d, #fff176); color: #333; } /* Gold/Yellow */
-        .btn-clear { background: linear-gradient(45deg, #64748b, #94a3b8); } /* Slate */
-
-
-        .hidden { display: none; }
-
-        .game-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* Game board styling */
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 25px;
+        .btn-start { background: linear-gradient(45deg, #39FF14, #7FFF00); color: #003300; border-color: #39FF14;} /* Neon green */
+        .btn-start:hover { background: linear-gradient(45deg, #7FFF00, #98FB98); box-shadow: 0 6px 0px #00000077, 0 0 15px rgba(57, 255, 20, 0.8);}
+        .btn-check { background: linear-gradient(45deg, #FF3131, #FF6B6B); color: #330000; border-color: #FF3131;} /* Neon red */
+        .btn-check:hover { background: linear-gradient(45deg, #FF6B6B, #FF8C8C); box-shadow: 0 6px 0px #00000077, 0 0 15px rgba(255, 49, 49, 0.8);}
+        .btn-reveal { background: linear-gradient(45deg, #FFD700, #FFEE75); color: #503000; border-color: #FFD700;} /* Gold */
+        .btn-reveal:hover { background: linear-gradient(45deg, #FFEE75, #FFFACD); box-shadow: 0 6px 0px #00000077, 0 0 15px rgba(255, 215, 0, 0.8);}
+        .btn-clear { background: linear-gradient(45deg, #808080, #A9A9A9); color: #202020; border-color: #808080;} /* Grey */
+        .btn-hint { background: linear-gradient(45deg, #DA70D6, #FF00FF); color: #300030; border-color: #DA70D6;} /* Orchid/Magenta */
+        button:disabled, .btn:disabled {
+            background: #505060 !important;
+            color: #9090a0 !important;
+            cursor: not-allowed;
+            box-shadow: 0 2px 0px #00000033, 0 0 5px rgba(125, 249, 255, 0.2);
+            border-color: #707080 !important;
+            transform: translateY(0) scale(1);
         }
 
-        /* Tile styling */
-        .tile {
-            background: linear-gradient(135deg, #4f4f4f 0%, #2b2b2b 100%); /* Dark grey gradient */
-            border: 3px solid #fbc02d; /* Gold border */
-            height: 110px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px; /* Larger question mark */
-            font-weight: bold;
-            color: #fbc02d; /* Gold question mark */
-            cursor: pointer;
-            border-radius: 10px; /* Match button corners */
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
-            perspective: 1000px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transform-style: preserve-3d;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        .tile:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(251, 192, 45, 0.4); /* Gold glow on hover */
-        }
+        .hidden { display: none !important; }
 
-        /* Tile flip animation */
-        .tile.flipped {
-            transform: rotateY(180deg);
-            background: linear-gradient(135deg, #1a2a6c 0%, #3b82f6 100%); /* Blue gradient when flipped */
-            border-color: #fff; /* White border when flipped */
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            cursor: default;
-        }
-        .tile .tile-content {
-            transform: rotateY(180deg); /* Counter-rotate content */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-        .gift-icon {
-            font-size: 50px;
-            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
-        }
+        .game-container { text-align: center; margin-top: 20px; }
 
-        /* Progress tracker */
         .progress-tracker {
             display: flex;
             justify-content: space-around;
             margin: 25px 0;
             padding: 10px;
             border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.3); /* Dark semi-transparent background */
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 20, 0.5); /* Dark blue transparent */
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 0 5px #7DF9FF;
         }
         .progress-step {
-            font-family: 'Bangers', cursive; /* Use Bangers */
+            font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
             text-align: center;
             width: 30%;
             padding: 12px 8px;
             border-radius: 10px;
-            background-color: #4b5563; /* Dark grey inactive */
-            color: #d1d5db; /* Light grey text */
-            font-size: 1.1rem;
+            background-color: #303050; /* Dark purple-blue */
+            color: #a0a0c0; /* Light purple-grey text */
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-            border: 2px solid #374151;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+            border: 2px solid #505070; /* Medium purple-blue border */
         }
         .active-step {
-            background: linear-gradient(45deg, #fbc02d, #fff176); /* Gold gradient */
-            color: #333; /* Dark text */
-            border-color: #ca8a04;
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #FFD700, #FFEE75); /* Gold */
+            color: #332200; /* Dark brown text */
+            border-color: #B8860B; /* DarkGoldenRod */
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 10px #FFD700;
         }
         .completed-step {
-            background: linear-gradient(45deg, #16a34a, #4ade80); /* Green gradient */
-            color: #fff;
-            border-color: #14532d;
+            background: linear-gradient(45deg, #39FF14, #7FFF00); /* Neon green */
+            color: #002000; /* Dark green text */
+            border-color: #228B22; /* ForestGreen */
             opacity: 0.9;
         }
-        .completed-step::after { content: " ✔️"; font-size: 14px; }
+        .completed-step::after { content: " ⭐"; font-size: clamp(12px, 3vw, 14px); }
 
-        /* Final message styling */
-        .final-message-box { /* Renamed from final-message to avoid conflict */
-            font-size: 1.5rem; /* Adjusted size */
-            font-weight: 600;
+        .final-message-box {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            font-weight: 700;
             text-align: center;
             margin-top: 30px;
-            padding: 25px;
-            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 100%); /* Match body gradient */
-            border-radius: 15px;
-            border: 3px solid #fbc02d; /* Gold border */
-            color: #fff; /* White text */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 30px;
+            background: linear-gradient(145deg, #8A2BE2 0%, #4B0082 100%); /* Purple gradient */
+            border-radius: 20px;
+            border: 4px solid #FFD700; /* Gold border */
+            color: #fff;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 0 5px #000, 0 0 30px #FF00FF; /* Black border and magenta glow */
         }
+        .final-message-box h3 { font-size: clamp(1.8rem, 6vw, 2.5rem); margin-bottom: 15px; color: #FFD700; text-shadow: 2px 2px #000; }
+        .final-message-box p { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 4vw, 1.3rem); font-weight: normal; }
 
-        /* Explosion effect */
-        .explosion {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(40px, 12vw, 100px); /* Responsive size */
-            color: #fff; /* White text */
-            text-align: center;
-            padding: 20px;
-            text-shadow: 3px 3px 0 #ff5722, /* Orange shadow */
-                         5px 5px 0 #000;   /* Black outline */
-            animation: explode 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-            z-index: 100;
-            line-height: 1.2;
-        }
-        @keyframes explode {
-            0% { transform: scale(0.1) rotate(-15deg); opacity: 0; }
-            60% { transform: scale(1.1) rotate(5deg); opacity: 1; }
-            100% { transform: scale(1) rotate(0deg); opacity: 0; } /* Fade out */
-        }
 
-        /* Input field styling */
         .game-input {
             padding: 12px 15px;
-            font-size: 18px;
+            font-size: clamp(1rem, 4vw, 1.1rem);
             margin: 10px 0;
-            border: 3px solid #64748b; /* Slate border */
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            border: 3px solid #7DF9FF; /* Neon cyan */
+            border-radius: 8px;
+            background-color: rgba(200, 220, 255, 0.9); /* Light blueish, slightly transparent */
+            color: #001f3f; /* Dark navy text */
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2), 0 0 5px #7DF9FF;
             width: calc(100% - 36px);
             max-width: 300px;
             text-align: center;
             font-weight: 600;
+            font-family: 'Poppins', sans-serif;
         }
         .game-input:focus {
             outline: none;
-            border-color: #1e293b; /* Darker slate on focus */
-            box-shadow: 0 0 8px rgba(30, 41, 59, 0.3);
+            border-color: #FFD700; /* Gold focus */
+            box-shadow: 0 0 10px #FFD700, inset 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Confetti Canvas Styling */
         #confetti-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Behind content */
-            pointer-events: none; /* Allow clicks through */
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 9999; pointer-events: none;
         }
 
-        /* Final gifts list */
-        #gifts-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-        }
+        #gifts-list { list-style: none; padding: 0; margin-top: 15px; }
         #gifts-list li {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(20, 30, 70, 0.8); /* Dark blue item bg */
             margin-bottom: 10px;
             padding: 12px 18px;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 4vw, 1.1rem);
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            color: #333; /* Dark text */
-            border: 2px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 3px #7DF9FF;
+            color: #D0D0FF; /* Light lavender text */
+            border: 1px solid #7DF9FF;
         }
-         #gifts-list li span { font-size: 2rem; } /* Emoji size */
+         #gifts-list li span { font-size: clamp(1.8rem, 5vw, 2rem); }
 
-         /* Emoji input area */
         #emoji-buttons button {
-             font-size: 1.8rem; /* Larger emoji on buttons */
-             padding: 8px 15px;
-             /* Use specific button colors */
-             background: linear-gradient(45deg, #64748b, #94a3b8); /* Slate */
+             font-size: clamp(1.6rem, 5vw, 2rem);
+             padding: 10px 18px;
+             background: linear-gradient(45deg, #404070, #606090); /* Muted space blue/purple */
+             border-color: #8080B0;
+             color: #E0E0FF;
         }
         #user-sequence {
-             background-color: #e2e8f0; /* Lighter slate background */
+             background-color: rgba(0,0,20,0.5); /* Dark transparent blue */
              border-radius: 10px;
              padding: 15px;
-             border: 3px dashed #94a3b8; /* Dashed slate border */
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             flex-wrap: wrap;
-             gap: 10px; /* Space between emojis */
+             border: 3px dashed #7DF9FF; /* Dashed cyan */
              min-height: 60px;
-             font-size: 2.5rem; /* Larger emojis in sequence */
+             font-size: clamp(2rem, 6vw, 2.5rem);
+             color: #FFD700; /* Gold text for sequence */
         }
-        #emoji-sequence { /* Style the sequence display area */
-            font-size: 3rem;
-            margin: 20px 0;
-            text-align: center;
-            min-height: 50px;
-            color: #1e293b;
-            font-weight: bold;
+        #emoji-sequence {
+            font-size: clamp(2.5rem, 7vw, 3rem);
+            margin: 20px 0; text-align: center; min-height: 50px;
+            color: #E0E0FF; /* Light lavender */
+            font-weight: bold; letter-spacing: 5px;
+        }
+        
+        .progress-bar-container {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px; height: 20px; margin: 15px 0;
+            overflow: hidden; border: 2px solid #FFD700; /* Gold border */
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #39FF14, #7FFF00); /* Neon green progress */
+            transition: width 0.5s ease-in-out;
+            border-radius: 8px 0 0 8px;
+        }
+        .level-indicator { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+        .level-badge {
+            background: linear-gradient(45deg, #FF3131, #FF6B6B); /* Neon red */
+            color: white; font-family: 'Orbitron', sans-serif;
+            padding: 5px 12px; border-radius: 20px;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            display: inline-block; margin-right: 10px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.3), 0 0 5px #FF3131;
+            border: 2px solid #000;
+        }
+        .hint-box {
+            background-color: rgba(20,0,30,0.7); /* Dark purple transparent */
+            border: 2px dashed #FF00FF; /* Magenta dashed border */
+            border-radius: 8px; padding: 12px; margin: 15px 0;
+            font-style: italic; position: relative; display: none;
+            color: #FFD1FF; /* Light magenta text */
+            box-shadow: 0 4px 10px rgba(255,0,255,0.3);
+            animation: hintAppear 0.5s ease-out forwards;
+        }
+        .hint-box::before {
+            content: "📡 TRANSMISSION INTERCEPTED (HINT):";
+            font-family: 'Orbitron', sans-serif; font-weight: normal;
+            color: #FF00FF; /* Magenta */
+            margin-right: 5px; font-size: 1.1em; font-style: normal;
+        }
+        @keyframes hintAppear {
+            from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
+        .power-meter { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; gap: 5px; }
+        .power-segment {
+            height: 25px; flex-grow: 1;
+            background-color: #404060; /* Dark inactive segment */
+            border-radius: 5px; transition: background-color 0.3s ease, transform 0.2s ease;
+            border: 1px solid #606080;
+        }
+        .power-active {
+            background: linear-gradient(90deg, #FFD700, #F0E68C); /* Gold/starlight */
+            box-shadow: 0 0 10px #FFD700;
+            border-color: #B8860B;
+            transform: scale(1.03);
+        }
+        .timer {
+            font-family: 'Orbitron', sans-serif; font-weight: 700;
+            font-size: clamp(1.6rem, 5vw, 1.8rem); text-align: center;
+            color: #FF3131; /* Neon red */
+            margin: 10px 0; letter-spacing: 2px;
+            text-shadow: 0 0 5px #FF3131, 1px 1px 0 #000;
+        }
+        .combo-display {
+            font-family: 'Orbitron', sans-serif; font-weight: 700;
+            font-size: clamp(1.4rem, 4.5vw, 1.6rem);
+            color: #7DF9FF; /* Neon cyan */
+            text-align: center; margin: 10px 0;
+        }
+        .combo-display span {
+            font-size: clamp(1.8rem, 5.5vw, 2rem);
+            color: #FFD700; /* Gold */
+            margin: 0 5px; display: inline-block;
+            animation: pulseCombo 0.5s ease infinite alternate;
+        }
+        @keyframes pulseCombo { to { transform: scale(1.1); text-shadow: 0 0 5px #FFD700; } }
+
+        .flying-emoji {
+            position: absolute; font-size: clamp(25px, 6vw, 30px);
+            animation: flyUpAndFade 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            z-index: 100; pointer-events: none;
+            text-shadow: 0 0 5px #fff;
+        }
+        @keyframes flyUpAndFade {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.3); opacity: 0; }
+        }
+        .bonus-message {
+            color: #39FF14; /* Neon green */
+            font-weight: bold; text-align: center; margin-top: 10px;
+            display: none; font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.2rem, 4vw, 1.4rem); letter-spacing: 1px;
+            animation: bonusPop 0.6s ease-out;
+            text-shadow: 0 0 5px #39FF14;
+        }
+        @keyframes bonusPop {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .emoji-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+            gap: 10px; margin: 20px 0;
+        }
+        .emoji-grid button {
+            font-size: clamp(1.8rem, 5vw, 2rem); padding: 10px;
+            background: linear-gradient(45deg, #6A0DAD, #9370DB); /* Purple shades */
+            border-color: #B0A0FF; color: #F0F0FF;
+        }
+        .shake { animation: shakeInput 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shakeInput {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+            20%, 40%, 60%, 80% { transform: translateX(6px); }
+        }
+        .game-level {
+            padding: 8px 12px; background-color: rgba(125, 249, 255, 0.1); /* Faint cyan bg */
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; gap: 6px; margin: 10px 0;
+        }
+        .game-level .star {
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+            filter: drop-shadow(0 0 3px #FFD700);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .star-earned { color: #FFD700; transform: scale(1.15); }
+        .star-empty { color: #607D8B; } /* Blue Grey for empty star */
+
+        /* Space Themed Reward Popup */
+        .reward-popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 10, 0.8); /* Darker space overlay */
+            display: flex; justify-content: center; align-items: center;
+            z-index: 2000; opacity: 0; transition: opacity 0.3s ease-in-out; padding: 15px;
+        }
+        .reward-popup {
+            background: linear-gradient(140deg, #1E1E52 0%, #4A0D66 100%); /* Deep space purple/blue */
+            border: 4px solid #FFD700; /* Gold border */
+            border-radius: 20px;
+            padding: clamp(20px, 5vw, 35px); text-align: center; color: white;
+            box-shadow: 0 0 0 6px rgba(0,0,0,0.4), 0 0 30px #FF00FF, 0 0 50px #7DF9FF; /* Black, magenta, cyan glows */
+            font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 5vw, 1.8rem);
+            letter-spacing: 1.5px; max-width: 90%; width: 480px;
+            transform: scale(0.7) rotateY(90deg);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Warp-in effect */
+            position: relative;
+        }
+        .reward-popup .reward-title {
+            font-size: clamp(1.8rem, 6vw, 2.5rem); color: #FFD700; /* Gold */
+            margin-bottom: 15px; text-shadow: 2px 2px 0 #000, 0 0 10px #FFD700;
+        }
+        .reward-popup .reward-message {
+            font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 4vw, 1.2rem);
+            margin-bottom: 20px; font-weight: 600; color: #E0E0FF; /* Light lavender */
+        }
+        .reward-popup .reward-emoji {
+            font-size: clamp(3.5rem, 10vw, 4.5rem); margin: 15px 0; display: inline-block;
+            filter: drop-shadow(0 0 15px #7DF9FF); /* Cyan glow on emoji */
+            animation: pulseSpaceEmoji 1.2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+        @keyframes pulseSpaceEmoji {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.2) rotate(10deg); }
+        }
+        .reward-popup .reward-close-btn {
+            font-family: 'Orbitron', sans-serif; font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #FFEE75); /* Gold */
+            color: #332200; border: 2px solid #B8860B;
+            padding: 10px 25px; font-size: clamp(1.1rem, 4vw, 1.3rem);
+            border-radius: 8px; cursor: pointer; margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 3px 0 #8B4513aa, 0 0 8px #FFD700;
+        }
+        .reward-popup .reward-close-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 5px 0 #8B4513cc, 0 0 12px #FFD700;
+        }
+
+        /* Space Themed Feedback Popup */
+        .feedback-popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 10, 0.75); /* Dark space overlay */
+            display: flex; justify-content: center; align-items: center;
+            z-index: 3000; opacity: 0; transition: opacity 0.25s ease-in-out; padding: 15px;
+        }
+        .feedback-popup {
+            border-radius: 18px; padding: clamp(25px, 5vw, 30px);
+            text-align: center; color: white;
+            box-shadow: 0 0 0 5px rgba(0,0,0,0.3), 0 0 20px rgba(125, 249, 255, 0.6); /* Black border, cyan glow */
+            font-family: 'Orbitron', sans-serif; letter-spacing: 1px;
+            max-width: 90%; width: 430px;
+            transform: scale(0.3) translateY(50px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Zoom and bounce up */
+            position: relative;
+        }
+        .feedback-popup-icon {
+            font-size: clamp(3rem, 10vw, 4rem); margin-bottom: 15px; display: block;
+            animation: iconPopInSpace 0.5s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity:0;
+        }
+        @keyframes iconPopInSpace {
+            0% { transform: scale(0.3) rotate(-45deg); opacity: 0;}
+            100% { transform: scale(1) rotate(0deg); opacity: 1;}
+        }
+        .feedback-popup-title {
+            font-size: clamp(1.8rem, 6vw, 2.2rem); margin-bottom: 10px;
+            text-shadow: 1px 1px 0 #000, 0 0 8px currentColor;
+        }
+        .feedback-popup-message {
+            font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 4vw, 1.15rem);
+            margin-bottom: 20px; font-weight: 600; line-height: 1.5; color: #D0D8FF;
+        }
+        .feedback-popup-button {
+            font-family: 'Orbitron', sans-serif; font-weight: 700;
+            padding: 10px 25px; font-size: clamp(1.1rem, 4vw, 1.3rem);
+            border-radius: 8px; cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 2px solid; color: white;
+            text-shadow: 1px 1px 0 #00000077;
+        }
+         .feedback-popup-button:hover { transform: translateY(-2px) scale(1.02); }
+
+        .feedback-popup.success {
+            background: linear-gradient(135deg, #004d00, #008000); /* Deep space green */
+            border: 3px solid #39FF14; /* Neon green border */
+            box-shadow: 0 0 0 5px rgba(0,0,0,0.3), 0 0 20px #39FF14;
+        }
+        .feedback-popup.success .feedback-popup-title { color: #90EE90; } /* LightGreen */
+        .feedback-popup.success .feedback-popup-button {
+            background: linear-gradient(45deg, #006400, #228B22); border-color: #7FFF00;
+            box-shadow: 0 3px 0 #003300aa, 0 0 8px #7FFF00;
+        }
+        .feedback-popup.success .feedback-popup-button:hover { box-shadow: 0 5px 0 #003300cc, 0 0 12px #7FFF00; }
+
+        .feedback-popup.error {
+            background: linear-gradient(135deg, #6A0000, #B22222); /* Deep space red */
+            border: 3px solid #FF3131; /* Neon red border */
+            box-shadow: 0 0 0 5px rgba(0,0,0,0.3), 0 0 20px #FF3131;
+        }
+        .feedback-popup.error .feedback-popup-title { color: #FFA07A; } /* LightSalmon */
+        .feedback-popup.error .feedback-popup-button {
+            background: linear-gradient(45deg, #8B0000, #CD5C5C); border-color: #FF6B6B;
+            box-shadow: 0 3px 0 #4B0000aa, 0 0 8px #FF6B6B;
+        }
+        .feedback-popup.error .feedback-popup-button:hover { box-shadow: 0 5px 0 #4B0000cc, 0 0 12px #FF6B6B; }
+
+        .feedback-popup.info {
+            background: linear-gradient(135deg, #003366, #00509E); /* Deep space blue */
+            border: 3px solid #7DF9FF; /* Neon cyan border */
+            box-shadow: 0 0 0 5px rgba(0,0,0,0.3), 0 0 20px #7DF9FF;
+        }
+        .feedback-popup.info .feedback-popup-title { color: #ADD8E6; } /* LightBlue */
+        .feedback-popup.info .feedback-popup-button {
+            background: linear-gradient(45deg, #004C99, #0066CC); border-color: #A0FFFF;
+            box-shadow: 0 3px 0 #002244aa, 0 0 8px #A0FFFF;
+        }
+        .feedback-popup.info .feedback-popup-button:hover { box-shadow: 0 5px 0 #002244cc, 0 0 12px #A0FFFF; }
     </style>
 </head>
 <body>
@@ -400,484 +573,924 @@
                 <span class="text-blue">HAPPY</span> <span class="text-yellow">BIRTHDAY</span> <span class="text-red-600">DAKSH!</span>
             </h1>
             <div class="manga-panel">
-                <h2 class="panel-title font-manga">DAKSH'S SUPER GIFT CHALLENGE!</h2>
+                <h2 class="panel-title font-bangers">DAKSH'S COSMIC QUEST!</h2>
                 <div class="speech-bubble">
-                    <p>Hey SUPER DAKSH! Ready for a HEROIC birthday mission? 😎</p>
-                    <p>I've hidden amazing gifts, but only the mightiest can claim them!</p>
-                    <p>Conquer 3 challenges to unlock the mystery vault!</p>
-                    <p>Then, choose 5 tiles - find the gifts, avoid the duds! Good luck! 🍀</p>
+                    <p>Greetings, Space Cadet Daksh! 🧑‍🚀 Ready for an INTERSTELLAR birthday mission?</p>
+                    <p>The galaxy needs YOUR brilliant mind to unlock the legendary Star Vault! 🌌✨</p>
+                    <p>Conquer 3 cosmic challenges with escalating difficulty! 🔥</p>
+                    <p>Outsmart alien puzzles, earn star-emblems ⭐, and claim amazing celestial rewards! 🎁🪐</p>
                 </div>
-                <div class="character">🦸‍♂️</div>
-                <button class="btn btn-start font-manga" onclick="startAdventure()">START MY MISSION!</button>
+                <div class="character">🧑‍🚀</div>
+                <button class="btn btn-start font-manga" onclick="startAdventure()">ENGAGE THRUSTERS! 🚀</button>
             </div>
         </div>
 
         <div id="game-flow" class="hidden">
             <div class="progress-tracker">
-                <div id="step1" class="progress-step active-step">Challenge 1</div>
-                <div id="step2" class="progress-step">Challenge 2</div>
-                <div id="step3" class="progress-step">Challenge 3</div>
+                <div id="step1" class="progress-step">Sector 1 Scan</div>
+                <div id="step2" class="progress-step">Sector 2 Decode</div>
+                <div id="step3" class="progress-step">Sector 3 Recall</div>
             </div>
 
-            <div id="game1" class="manga-panel">
-                <h3 class="panel-title font-manga">CHALLENGE 1: MATH AVENGER!</h3>
-                <div class="speech-bubble">
-                    <p>First task, hero! Solve this cryptic calculation! 🧮</p>
-                    <p>If you multiply a secret number by 5, then subtract 7, the result is 33. What's the secret number?</p>
+            <div id="game1" class="manga-panel hidden">
+                <h3 class="panel-title">SECTOR 1: COSMIC CALCULATOR!</h3>
+                <div class="level-indicator">
+                    <div class="level-badge" id="math-level-badge">LEVEL 1</div>
+                    <div class="game-level">
+                        <span class="star star-empty" id="math-star-1">⭐</span>
+                        <span class="star star-empty" id="math-star-2">⭐</span>
+                        <span class="star star-empty" id="math-star-3">⭐</span>
+                    </div>
                 </div>
-                <div class="character">🔢</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="math-progress" style="width: 0%"></div>
+                </div>
+                <div class="speech-bubble">
+                    <p id="math-villain-intro">The Comet Lord Computron is scrambling navigation data! ☄️</p>
+                    <p id="math-question">Planetary alignment calculation required...</p>
+                    <div class="timer" id="math-timer">⏱️ 45</div>
+                </div>
+                <div class="character" id="math-character">👽</div>
+                <div class="hint-box" id="math-hint">Hint transmission incoming...</div>
                 <div class="game-container">
-                    <input type="number" id="math-answer" class="game-input" placeholder="Enter number...">
-                    <button class="btn btn-check font-manga" onclick="checkMathAnswer()">CHECK ANSWER</button>
+                    <input type="number" id="math-answer" class="game-input" placeholder="Enter solution...">
+                    <div>
+                        <button class="btn btn-check font-manga" onclick="checkMathAnswer()">CALCULATE! ⚡</button>
+                        <button class="btn btn-hint font-manga" id="math-hint-btn" onclick="showHint('math')">SIGNAL BOOST (HINT) 📡</button>
+                    </div>
+                    <div class="bonus-message" id="math-bonus">WARP SPEED BONUS! +GALACTIC CREDITS! ✨</div>
                 </div>
             </div>
 
             <div id="game2" class="manga-panel hidden">
-                <h3 class="panel-title font-manga">CHALLENGE 2: WORD WARRIOR!</h3>
-                <div class="speech-bubble">
-                    <p>Impressive! Now, unscramble these letters to reveal a tasty power-up! 📚</p>
-                    <p style="font-size: 24px; font-weight: bold; letter-spacing: 5px; text-align: center; color: #b21f1f;">A E T H L O C O C E</p>
+                <h3 class="panel-title">SECTOR 2: GALAXY WORD SCRAMBLE!</h3>
+                <div class="level-indicator">
+                    <div class="level-badge" id="word-level-badge">LEVEL 1</div>
+                    <div class="game-level">
+                        <span class="star star-empty" id="word-star-1">⭐</span>
+                        <span class="star star-empty" id="word-star-2">⭐</span>
+                        <span class="star star-empty" id="word-star-3">⭐</span>
+                    </div>
                 </div>
-                <div class="character">🧩</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="word-progress" style="width: 0%"></div>
+                </div>
+                <div class="speech-bubble">
+                    <p id="word-villain-intro">The Nebula Nuisance has jumbled star charts! 📜</p>
+                    <p>Reconstruct the cosmic term from these stellar fragments:</p>
+                    <p id="word-scramble" style="font-family: 'Orbitron', sans-serif; font-size: clamp(20px, 6vw, 28px); font-weight: bold; letter-spacing: 5px; text-align: center; color: #FFD700; margin: 10px 0; padding: 10px; background: rgba(0,0,30,0.5); border-radius: 8px; border: 2px dashed #7DF9FF;">FRAGMENTS</p>
+                    <div class="power-meter" id="word-power-meter">
+                        <div class="power-segment"></div><div class="power-segment"></div><div class="power-segment"></div><div class="power-segment"></div><div class="power-segment"></div>
+                    </div>
+                </div>
+                <div class="character" id="word-character">👾</div>
+                <div class="hint-box" id="word-hint">Hint transmission incoming...</div>
                 <div class="game-container">
-                    <input type="text" id="word-answer" class="game-input" placeholder="Unscramble...">
-                    <button class="btn btn-check font-manga" onclick="checkWordAnswer()">CHECK ANSWER</button>
+                    <input type="text" id="word-answer" class="game-input" placeholder="Reconstruct term...">
+                    <div>
+                        <button class="btn btn-check font-manga" onclick="checkWordAnswer()">DECODE! 🛰️</button>
+                        <button class="btn btn-hint font-manga" id="word-hint-btn" onclick="showHint('word')">SIGNAL BOOST (HINT) 📡</button>
+                    </div>
+                    <div class="combo-display" id="word-combo">COMBO DRIVE: <span>0</span>x! 💫</div>
                 </div>
             </div>
 
             <div id="game3" class="manga-panel hidden">
-                <h3 class="panel-title font-manga">CHALLENGE 3: MEMORY MASTERMIND!</h3>
-                <div class="speech-bubble">
-                    <p>Final test! Observe the sequence, then repeat it perfectly! 🧠</p>
-                    <div id="emoji-sequence"></div> <div id="emoji-input" class="hidden">
-                        <p style="font-weight: bold; margin-top: 15px;">Enter the sequence using the buttons below:</p>
+                <h3 class="panel-title">SECTOR 3: STELLAR SEQUENCE RECALL!</h3>
+                <div class="level-indicator">
+                    <div class="level-badge" id="memory-level-badge">LEVEL 1</div>
+                    <div class="game-level">
+                        <span class="star star-empty" id="memory-star-1">⭐</span>
+                        <span class="star star-empty" id="memory-star-2">⭐</span>
+                        <span class="star star-empty" id="memory-star-3">⭐</span>
                     </div>
                 </div>
-                <div class="character">🤔</div>
-                <div class="game-container">
-                    <button id="show-sequence-btn" class="btn font-manga" onclick="showEmojiSequence()">SHOW SEQUENCE</button>
-                    <div id="user-sequence" class="hidden"></div>
-                     <div id="emoji-buttons" class="hidden" style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn font-manga" onclick="addEmoji('🍕')">🍕</button>
-                        <button class="btn font-manga" onclick="addEmoji('🎸')">🎸</button>
-                        <button class="btn font-manga" onclick="addEmoji('⚽')">⚽</button>
-                        <button class="btn font-manga" onclick="addEmoji('🚀')">🚀</button>
-                        <button class="btn font-manga" onclick="addEmoji('🌮')">🌮</button>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="memory-progress" style="width: 0%"></div>
+                </div>
+                <div class="speech-bubble">
+                    <p id="memory-villain-intro">The Void Whisperer is disrupting comms arrays! 🌀</p>
+                    <p>Memorize and replicate the hyperspace jump coordinates:</p>
+                    <div id="emoji-sequence"></div>
+                    <div id="emoji-input" class="hidden">
+                        <p style="font-weight: bold; margin-top: 15px; color: #ADD8E6;">Input coordinates using the console below:</p>
                     </div>
-                    <button id="check-sequence-btn" class="btn btn-check font-manga hidden" onclick="checkEmojiSequence()">CHECK SEQUENCE</button>
-                    <button id="clear-emoji-btn" class="btn btn-clear font-manga hidden" onclick="clearEmojiSequence()">CLEAR</button>
+                </div>
+                <div class="character" id="memory-character">🤖</div>
+                <div class="hint-box" id="memory-hint">Hint transmission incoming...</div>
+                <div class="game-container">
+                    <button id="show-sequence-btn" class="btn btn-start font-manga" onclick="showEmojiSequence()">VIEW COORDINATES 🌠</button>
+                    <div id="user-sequence" class="hidden"></div>
+                    <div id="emoji-buttons" class="hidden emoji-grid" style="margin-top: 20px;">
+                        </div>
+                    <div class="bonus-message" id="memory-bonus">ASTRO-MEMORY! +COSMIC ENERGY! 🌌</div>
+                    <div class="flex justify-center gap-2 mt-3">
+                        <button id="check-sequence-btn" class="btn btn-check font-manga hidden" onclick="checkEmojiSequence()">CONFIRM JUMP 🚀</button>
+                        <button id="clear-emoji-btn" class="btn btn-clear font-manga hidden" onclick="clearEmojiSequence()">RESET NAV 🔄</button>
+                         <button class="btn btn-hint font-manga hidden" id="memory-hint-btn" onclick="showHint('memory')">SIGNAL BOOST (HINT) 📡</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div id="gift-selection" class="manga-panel hidden">
-            <h3 class="panel-title font-manga">THE VAULT IS OPEN!</h3>
+            <h3 class="panel-title">STAR VAULT UNLOCKED!</h3>
             <div class="speech-bubble">
-                <p>INCREDIBLE! You've passed all tests! 🎉</p>
-                <p>Now, choose 5 tiles from the vault below.</p>
-                <p>Will you find legendary gifts or empty space? Choose wisely!</p>
-                <p style="text-align: center; margin-top: 10px;"><span id="selections-remaining" class="font-manga" style="font-size: 1.8rem; color: #d32f2f;">5</span> selections left!</p>
+                <p>INCREDIBLE, COMMANDER DAKSH! 🏆 You've navigated all cosmic hazards!</p>
+                <p>The legendary Star Vault is open. Choose your well-earned celestial treasures!</p>
             </div>
-            <div class="character">💎</div>
-            <div class="game-board" id="gift-board">
-                </div>
-            <div style="text-align: center; margin-top: 20px;">
-                 <button id="finish-btn" class="btn btn-reveal font-manga hidden" onclick="showFinalResult()">REVEAL MY LOOT!</button>
-            </div>
+            <div class="character">🌟</div>
+            <ul id="gifts-list">
+                </ul>
+            <button class="btn btn-reveal font-manga mt-4" onclick="revealFinalMessage()" id="reveal-final-btn" disabled>REVEAL FINAL COSMIC SURPRISE! ✨</button>
         </div>
 
-        <div id="final-result" class="manga-panel hidden">
-            <h3 class="panel-title font-manga">YOUR BIRTHDAY HAUL!</h3>
-            <div class="speech-bubble">
-                <p>MISSION ACCOMPLISHED, DAKSH! 🥳</p>
-                <p>Here are the treasures you secured:</p>
-                <ul id="gifts-list"></ul>
-                <p id="final-birthday-message" class="final-message-box"></p>
-            </div>
-            <div class="character">🏆</div>
+        <div id="final-message-screen" class="final-message-box hidden">
+            <h3 id="final-title">MISSION ACCOMPLISHED, STAR COMMANDER DAKSH!</h3>
+            <p id="final-text">You've claimed your treasures and saved the galaxy! May your birthday be filled with cosmic wonders and infinite joy! Happy Orbit Day!</p>
+            <p style="font-size: 3rem; margin-top: 20px;">🎉🎂🎁🎈🚀🪐⭐</p>
         </div>
     </div>
 
-    <script>
-        // --- Game State Variables ---
-        let completedGames = 0;
-        let selectedTiles = 0;
-        const MAX_SELECTIONS = 5; // Max tiles user can pick
-        let selectedGifts = []; // Array to store actual gift objects won
-        let currentEmojiSequence = []; // The correct sequence for challenge 3
-        let userEmojiSequence = []; // The sequence entered by the user
+<script>
+    // Ensure confetti is available
+    const confettiInstance = window.confetti;
 
-        // --- Constants ---
-        // Define the possible gifts
-        const GIFTS = [
-            {icon: "🍫", name: "Cosmic Chocolate Bar"},
-            {icon: "👟", name: "Super-Speed Sneakers"},
-            {icon: "👕", name: "Heroic Graphic T-Shirt"},
-            {icon: "🚁", name: "Stealth Drone Copter"},
-            {icon: "🏏", name: "Power Hitter Cricket Kit"}
-        ];
-        // Emojis available for the memory game sequence
-        const BUTTON_EMOJIS = ["🍕", "🎸", "⚽", "🚀", "🌮"];
-        const TOTAL_TILES = 9; // Total tiles on the gift board
-        const NUM_GIFTS_HIDDEN = 5; // Number of gifts hidden among tiles
+    // --- Global Game State ---
+    let currentChallenge = 1;
+    let totalScore = 0;
+    const gifts = [ // Space-themed gifts
+        { name: "Personal Asteroid Belt", emoji: "🪐", id: "gift1" },
+        { name: "Alien Companion Whistle", emoji: "👽", id: "gift2" },
+        { name: "Pocket Black Hole", emoji: "⚫", id: "gift3" },
+        { name: "Keys to a Starship", emoji: "🚀", id: "gift4" }
+    ];
+    let giftsUnlocked = [];
 
-        // --- DOM Element References (Optional but can improve performance) ---
-        const introScreen = document.getElementById("intro-screen");
-        const gameFlowScreen = document.getElementById("game-flow");
-        const giftSelectionScreen = document.getElementById("gift-selection");
-        const finalResultScreen = document.getElementById("final-result");
-        // Add more references as needed...
+    // --- DOM Elements ---
+    const introScreen = document.getElementById('intro-screen');
+    const gameFlow = document.getElementById('game-flow');
+    const giftSelectionScreen = document.getElementById('gift-selection');
+    const finalMessageScreen = document.getElementById('final-message-screen');
+    const giftsList = document.getElementById('gifts-list');
+    const revealFinalBtn = document.getElementById('reveal-final-btn');
 
-        // --- Confetti & Balloon Effect ---
-        const confettiCanvas = document.getElementById('confetti-canvas');
-        // Ensure confetti library is loaded before creating instance
-        let myConfetti;
-        if (typeof confetti !== 'undefined') {
-             myConfetti = confetti.create(confettiCanvas, {
-                resize: true,
-                useWorker: true
+    // --- Challenge 1: Cosmic Calculator ---
+    const game1Screen = document.getElementById('game1');
+    const mathQuestionEl = document.getElementById('math-question');
+    const mathAnswerEl = document.getElementById('math-answer');
+    const mathTimerEl = document.getElementById('math-timer');
+    const mathHintEl = document.getElementById('math-hint');
+    const mathHintBtn = document.getElementById('math-hint-btn');
+    const mathLevelBadge = document.getElementById('math-level-badge');
+    const mathProgressBar = document.getElementById('math-progress');
+    const mathBonusMessage = document.getElementById('math-bonus');
+    const mathVillainIntro = document.getElementById('math-villain-intro');
+    const mathCharacter = document.getElementById('math-character');
+
+    const mathVillains = [ // Space-themed villains
+        { name: "Comet Lord Computron", emoji: "☄️", intro: "The Comet Lord Computron is scrambling navigation data! Solve the equations to recalibrate! ☄️"},
+        { name: "Quasar Quizzler", emoji: "💫", intro: "The Quasar Quizzler is distorting spacetime with math riddles! Your calculations must be precise! 💫"},
+        { name: "Black Hole Brainiac", emoji: "🌀", intro: "The Black Hole Brainiac is bending numbers to its will! Only logic can escape its pull! 🌀"}
+    ];
+
+    const mathLevels = [ // Space-themed math questions
+        { question: "A rocket travels at 8 km/s. How far does it travel in 60 seconds?", answer: 480, hint: "Distance = Speed × Time. Multiply 8 by 60.", time: 45 },
+        { question: "Planet X has 3 moons. Planet Y has 4 times as many moons as Planet X. How many moons does Planet Y have?", answer: 12, hint: "Multiply Planet X's moons (3) by 4.", time: 30 },
+        { question: "An astronaut needs 2 oxygen tanks per day. If a mission is 7 days long, how many tanks are needed?", answer: 14, hint: "Multiply tanks per day (2) by the number of days (7).", time: 40 },
+        { question: "A spaceship's fuel tank holds 500 units. If it uses 75 units per jump, how many FULL jumps can it make?", answer: 6, hint: "Divide 500 by 75. The whole number part is your answer.", time: 50},
+        { question: "Light from the Sun takes ~8 minutes to reach Earth. If a distant star is 1000 times further than the Sun, roughly how many minutes would its light take to reach Earth?", answer: 8000, hint: "Multiply 8 minutes by 1000.", time: 60}
+    ];
+    let currentMathLevel = 0;
+    let mathScore = 0;
+    let mathStars = 0;
+    let mathTimerInterval;
+    let mathTimeLeft;
+    const mathLevelsPerChallenge = 3;
+
+
+    // --- Challenge 2: Galaxy Word Scramble ---
+    const game2Screen = document.getElementById('game2');
+    const wordScrambleEl = document.getElementById('word-scramble');
+    const wordAnswerEl = document.getElementById('word-answer');
+    const wordHintEl = document.getElementById('word-hint');
+    const wordHintBtn = document.getElementById('word-hint-btn');
+    const wordLevelBadge = document.getElementById('word-level-badge');
+    const wordProgressBar = document.getElementById('word-progress');
+    const wordComboEl = document.getElementById('word-combo').querySelector('span');
+    const wordPowerMeterSegments = document.getElementById('word-power-meter').children;
+    const wordVillainIntro = document.getElementById('word-villain-intro');
+    const wordCharacter = document.getElementById('word-character');
+
+    const wordVillains = [ // Space-themed
+        { name: "Nebula Nuisance", emoji: "🌫️", intro: "The Nebula Nuisance has jumbled star charts! Reconstruct the cosmic terms! 📜"},
+        { name: "Asteroid Anagrammer", emoji: "🧱", intro: "The Asteroid Anagrammer is breaking words into fragments! Piece them together! 🕵️"},
+        { name: "Galaxy Gobbledy-gooker", emoji: "🌌", intro: "The Galaxy Gobbledy-gooker speaks in riddles! Unscramble the alien words! 👽"}
+    ];
+    const wordLevels = [ // Space-themed words
+        { scramble: "TPLANES", answer: "PLANETS", hint: "Celestial bodies orbiting a star." },
+        { scramble: "YAGALX", answer: "GALAXY", hint: "A vast system of stars, gas, and dust." },
+        { scramble: "TOCME", answer: "COMET", hint: "An icy body that releases gas or dust, often with a tail." },
+        { scramble: "NEILA", answer: "ALIEN", hint: "A being from another world."},
+        { scramble: "ECAPS", answer: "SPACE", hint: "The boundless three-dimensional extent in which objects and events have relative position and direction."}
+    ];
+    let currentWordLevel = 0;
+    let wordScore = 0;
+    let wordStars = 0;
+    let wordCombo = 0;
+    const wordLevelsPerChallenge = 3;
+
+    // --- Challenge 3: Stellar Sequence Recall ---
+    const game3Screen = document.getElementById('game3');
+    const emojiSequenceEl = document.getElementById('emoji-sequence');
+    const userSequenceEl = document.getElementById('user-sequence');
+    const emojiButtonsContainer = document.getElementById('emoji-buttons');
+    const showSequenceBtn = document.getElementById('show-sequence-btn');
+    const checkSequenceBtn = document.getElementById('check-sequence-btn');
+    const clearEmojiBtn = document.getElementById('clear-emoji-btn');
+    const memoryHintEl = document.getElementById('memory-hint');
+    const memoryHintBtn = document.getElementById('memory-hint-btn');
+    const memoryLevelBadge = document.getElementById('memory-level-badge');
+    const memoryProgressBar = document.getElementById('memory-progress');
+    const memoryBonusMessage = document.getElementById('memory-bonus');
+    const emojiInputElement = document.getElementById('emoji-input');
+    const memoryVillainIntro = document.getElementById('memory-villain-intro');
+    const memoryCharacter = document.getElementById('memory-character');
+
+
+    const memoryVillains = [ // Space-themed
+        { name: "Void Whisperer", emoji: "🌀", intro: "The Void Whisperer is disrupting comms arrays with psychic static! Focus and recall the sequence! 🧠"},
+        { name: "Chrono Distorter", emoji: "⏳", intro: "The Chrono Distorter is scrambling temporal messages! Remember the order before it's lost in time! 😵"},
+        { name: "Echo Anomaly", emoji: "📡", intro: "The Echo Anomaly repeats signals out of order! Identify the true sequence! 🌌"}
+    ];
+
+    const memoryLevels = [ // Uses space emojis
+        { sequenceLength: 3, numEmojis: 5, hint: "Imagine the emojis are charting a course through space!" },
+        { sequenceLength: 4, numEmojis: 6, hint: "Link each emoji to a step in a planetary landing procedure." },
+        { sequenceLength: 5, numEmojis: 7, hint: "Try 'chunking' the sequence into smaller parts, like two and three." }
+    ];
+    const availableEmojis = ["🧑‍🚀", "👽", "🚀", "🪐", "⭐", "🌙", "☄️", "🌌", "🛸", "🛰️"]; // Space emojis
+    let currentMemoryLevel = 0;
+    let memoryScore = 0;
+    let memoryStars = 0;
+    let currentEmojiSequence = [];
+    let userEmojiSequence = [];
+    const memoryLevelsPerChallenge = 3;
+
+
+    // --- Game Flow & Initialization ---
+    function startAdventure() {
+        introScreen.classList.add('hidden');
+        gameFlow.classList.remove('hidden'); // Show the progress tracker container
+        game1Screen.classList.remove('hidden'); // **FIXED: Explicitly show the first game screen**
+        updateProgressTracker(1);
+        currentChallenge = 1;
+        loadMathChallenge(currentMathLevel); // Load the content for the first math level
+    }
+
+    function updateProgressTracker(currentStep) {
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.classList.remove('active-step', 'completed-step');
+            if (index + 1 < currentStep) {
+                step.classList.add('completed-step');
+            } else if (index + 1 === currentStep) {
+                step.classList.add('active-step');
+            }
+        });
+    }
+
+    function nextChallenge(currentChallengeNum) {
+        // Hide all game screens first to prevent overlap if logic is complex
+        game1Screen.classList.add('hidden');
+        game2Screen.classList.add('hidden');
+        game3Screen.classList.add('hidden');
+        giftSelectionScreen.classList.add('hidden');
+
+        if (currentChallengeNum === 1) { // Finished Math, moving to Word
+            game2Screen.classList.remove('hidden');
+            currentChallenge = 2;
+            updateProgressTracker(2);
+            loadWordChallenge(currentWordLevel);
+        } else if (currentChallengeNum === 2) { // Finished Word, moving to Memory
+            game3Screen.classList.remove('hidden');
+            currentChallenge = 3;
+            updateProgressTracker(3);
+            loadMemoryChallenge(currentMemoryLevel);
+        } else if (currentChallengeNum === 3) { // Finished Memory, moving to Gifts
+            giftSelectionScreen.classList.remove('hidden');
+            populateGifts();
+            triggerConfetti(3000, ['star']); // Star confetti!
+        }
+    }
+
+    // --- Challenge 1: Cosmic Calculator Logic ---
+    function loadMathChallenge(levelIndex) {
+        // Ensure levelIndex is within bounds of available levels for this challenge type
+        if (levelIndex >= mathLevels.length) {
+            // This case should ideally be handled by the logic that increments levelIndex,
+            // e.g., by moving to next challenge if all questions are exhausted.
+            // For safety, if somehow called with out-of-bounds index, show end of challenge or error.
+             console.error("Math Level Index out of bounds:", levelIndex);
+             // Fallback: if all math questions are done, but challenge not "won"
+             showGameFeedbackPopup("ALL MATH DATA PROCESSED", "No more calculations in this sector. Moving to next objective.", "info", () => {
+                nextChallenge(1); // Move to challenge 2
+             });
+             return;
+        }
+        const level = mathLevels[levelIndex];
+        const villain = mathVillains[levelIndex % mathVillains.length]; // Cycle through villains
+
+        mathVillainIntro.textContent = villain.intro;
+        mathCharacter.textContent = villain.emoji;
+        mathQuestionEl.textContent = level.question;
+        mathAnswerEl.value = '';
+        mathHintEl.textContent = level.hint;
+        mathHintEl.style.display = 'none';
+        mathHintBtn.disabled = false;
+        mathTimeLeft = level.time;
+        mathTimerEl.textContent = `⏱️ ${mathTimeLeft}`;
+        mathTimerEl.style.color = '#FF3131'; // Default timer color (neon red)
+        mathLevelBadge.textContent = `WAVE ${currentMathLevel + 1}`; // Use currentMathLevel for badge
+        updateProgressBar('math', mathScore, mathLevelsPerChallenge);
+        updateStars('math', mathStars);
+        mathBonusMessage.style.display = 'none';
+        startMathTimer();
+    }
+
+    function startMathTimer() {
+        clearInterval(mathTimerInterval);
+        mathTimerEl.classList.remove('shake');
+        mathTimerEl.style.color = '#FF3131'; // Reset to neon red
+        mathTimerInterval = setInterval(() => {
+            mathTimeLeft--;
+            mathTimerEl.textContent = `⏱️ ${mathTimeLeft}`;
+            if (mathTimeLeft <= 10 && mathTimeLeft > 0) {
+                 mathTimerEl.style.color = '#FFD700'; // Gold warning
+                 mathTimerEl.classList.add('shake');
+            }
+
+            if (mathTimeLeft <= 0) {
+                clearInterval(mathTimerInterval);
+                showGameFeedbackPopup("CRITICAL FAILURE!", "Time's up, Cadet! The cosmic calculations overwhelmed the system... 💔", "error", () => {
+                    currentMathLevel++; // Advance level index even on timeout
+                    if (mathScore < mathLevelsPerChallenge) { // Check if challenge is already won
+                         if (currentMathLevel < mathLevels.length) { // Check if there are more questions of this type
+                            loadMathChallenge(currentMathLevel);
+                        } else { // No more questions of this type, and challenge not won
+                            showGameFeedbackPopup("SECTOR 1 LOST!", "Not enough correct calculations for Cosmic Calculator. Proceeding to next sector...", "error", () => {
+                                nextChallenge(1); // Move to challenge 2
+                            });
+                        }
+                    } else { // Challenge was already won (should not happen if score logic is correct, but safe)
+                         nextChallenge(1); // Move to challenge 2
+                    }
+                });
+            }
+        }, 1000);
+    }
+
+    function checkMathAnswer() {
+        clearInterval(mathTimerInterval);
+        const userAnswer = parseInt(mathAnswerEl.value);
+        // Ensure currentMathLevel is valid before accessing mathLevels
+        if (currentMathLevel >= mathLevels.length) {
+            console.error("Attempted to check math answer for an invalid level:", currentMathLevel);
+            // Potentially show an error or gracefully move on
+            nextChallenge(1); // Or some other recovery
+            return;
+        }
+        const correctAnswer = mathLevels[currentMathLevel].answer;
+
+        if (userAnswer === correctAnswer) {
+            totalScore += (100 + mathTimeLeft * 2);
+            mathScore++;
+            if (mathTimeLeft > mathLevels[currentMathLevel].time / 2) {
+                totalScore += 200; // Bonus points
+                mathBonusMessage.textContent = `WARP SPEED CALCULATION! +${200 + mathTimeLeft * 2} CREDITS! ✨`;
+                mathBonusMessage.style.display = 'block';
+            } else {
+                 mathBonusMessage.style.display = 'none';
+            }
+
+            if (mathScore > 0) mathStars = Math.min(3, mathScore);
+            updateStars('math', mathStars);
+            triggerConfetti(500, ['star']);
+
+            showGameFeedbackPopup("CALCULATION SUCCESS!", `Stellar work, Cadet! You earned ${100 + mathTimeLeft * 2} Galactic Credits!`, "success", () => {
+                if (mathScore >= mathLevelsPerChallenge) { // Challenge 1 won
+                    showRewardPopup("SECTOR 1 CLEARED!", `You outsmarted ${mathVillains[(currentMathLevel)%mathVillains.length].name} and earned ${mathStars} star-emblems! ⭐`, '🛰️', () => nextChallenge(1));
+                } else { // Challenge 1 not yet won, try next level
+                    currentMathLevel++;
+                    if (currentMathLevel < mathLevels.length) { // More questions available for this challenge type
+                        loadMathChallenge(currentMathLevel);
+                    } else { // No more questions of this type, but challenge not won
+                         showGameFeedbackPopup("DATA STREAMS DEPLETED!", "You've processed all available calculations for this sector, but the primary objective isn't met. Moving to next sector.", "info", () => {
+                           nextChallenge(1); // Move to challenge 2
+                        });
+                    }
+                }
+            });
+        } else { // Incorrect answer
+            mathAnswerEl.classList.add('shake');
+            setTimeout(() => mathAnswerEl.classList.remove('shake'), 500);
+            mathTimeLeft = Math.max(0, mathTimeLeft - 10); // Penalty
+            mathTimerEl.textContent = `⏱️ ${mathTimeLeft}`;
+            showGameFeedbackPopup("SYSTEM ERROR!", "Incorrect calculation, Cadet! That cost us 10 precious seconds!", "error", () => {
+                if(mathTimeLeft > 0) {
+                    startMathTimer(); // Restart timer if time left
+                } else { // Time ran out due to penalty
+                    clearInterval(mathTimerInterval); // Ensure timer is stopped
+                    mathTimerEl.textContent = `⏱️ 0`;
+                    showGameFeedbackPopup("CRITICAL FAILURE!", "The penalty depleted all remaining time! 💔", "error", () => {
+                        currentMathLevel++; // Still advance level index
+                        if (mathScore < mathLevelsPerChallenge && currentMathLevel < mathLevels.length) {
+                            loadMathChallenge(currentMathLevel);
+                        } else { // No more questions or challenge already lost/won
+                             showGameFeedbackPopup("SECTOR 1 LOST!", "Calculations unstable. Proceeding to next sector...", "error", () => {
+                                nextChallenge(1); // Move to challenge 2
+                            });
+                        }
+                    });
+                }
+            });
+        }
+        updateProgressBar('math', mathScore, mathLevelsPerChallenge);
+    }
+
+
+    // --- Challenge 2: Galaxy Word Scramble Logic ---
+    function loadWordChallenge(levelIndex) {
+        if (levelIndex >= wordLevels.length) {
+            console.error("Word Level Index out of bounds:", levelIndex);
+            showGameFeedbackPopup("ALL STAR CHARTS ANALYZED", "No more cosmic terms to decode here. Moving to next sector.", "info", () => {
+                nextChallenge(2); // Move to challenge 3
+            });
+            return;
+        }
+        const level = wordLevels[levelIndex];
+        const villain = wordVillains[levelIndex % wordVillains.length];
+
+        wordVillainIntro.textContent = villain.intro;
+        wordCharacter.textContent = villain.emoji;
+        wordScrambleEl.textContent = level.scramble;
+        wordAnswerEl.value = '';
+        wordHintEl.textContent = level.hint;
+        wordHintEl.style.display = 'none';
+        wordHintBtn.disabled = false;
+        wordLevelBadge.textContent = `SIGNAL ${currentWordLevel + 1}`;
+        updateProgressBar('word', wordScore, wordLevelsPerChallenge);
+        updateStars('word', wordStars);
+        wordCombo = 0;
+        updatePowerMeter();
+    }
+
+    function checkWordAnswer() {
+        if (currentWordLevel >= wordLevels.length) {
+             console.error("Attempted to check word answer for an invalid level:", currentWordLevel);
+             nextChallenge(2); return;
+        }
+        const userAnswer = wordAnswerEl.value.trim().toUpperCase();
+        const correctAnswer = wordLevels[currentWordLevel].answer.toUpperCase();
+
+        if (userAnswer === correctAnswer) {
+            totalScore += 150;
+            wordScore++;
+            wordCombo++;
+            totalScore += wordCombo * 50;
+            updatePowerMeter();
+            triggerConfetti(500, ['star']);
+
+            if (wordScore > 0) wordStars = Math.min(3, wordScore);
+            updateStars('word', wordStars);
+
+            showGameFeedbackPopup("DECODING COMPLETE!", `Cosmic term identified! +${150 + wordCombo * 50} credits! Combo Drive: ${wordCombo}x!`, "success", () => {
+                if (wordScore >= wordLevelsPerChallenge) {
+                    showRewardPopup("SECTOR 2 SECURED!", `You outsmarted ${wordVillains[(currentWordLevel)%wordVillains.length].name} and earned ${wordStars} star-emblems! ⭐`, '📜', () => nextChallenge(2));
+                } else {
+                    currentWordLevel++;
+                    if (currentWordLevel < wordLevels.length) {
+                        loadWordChallenge(currentWordLevel);
+                    } else {
+                         showGameFeedbackPopup("ALL CHARTS ANALYZED!", "All word fragments processed, but the sector isn't fully secured. Moving on...", "info", () => {
+                           nextChallenge(2);
+                        });
+                    }
+                }
             });
         } else {
-            console.error("Confetti library not loaded!");
+            wordAnswerEl.classList.add('shake');
+            setTimeout(() => wordAnswerEl.classList.remove('shake'), 500);
+            wordCombo = 0;
+            updatePowerMeter();
+            showGameFeedbackPopup("TRANSMISSION GARBLED!", "That's not the correct cosmic term. Recalibrate and try again!", "error");
         }
+        wordComboEl.textContent = wordCombo;
+        updateProgressBar('word', wordScore, wordLevelsPerChallenge);
+    }
 
-        function fireConfettiAndBalloons(particleMultiplier = 1) {
-            if (!myConfetti) return; // Don't run if confetti failed to load
-
-            // Standard Confetti
-            myConfetti({
-                particleCount: 100 * particleMultiplier,
-                spread: 120,
-                origin: { y: 0.6 }
-            });
-            // Balloons (using emoji)
-            myConfetti({
-                particleCount: 25 * particleMultiplier, // Fewer balloons
-                spread: 100,
-                origin: { y: 0.7 },
-                angle: 90,
-                drift: 0.5,
-                gravity: -0.05, // Float up slower
-                ticks: 400, // Last longer
-                scalar: 1.6, // Bigger emojis
-                shapes: ['emoji'],
-                shapeOptions: {
-                    emoji: { value: ['🎈', '🎉', '🎂', '🎁'] } // More birthday emojis
-                }
-            });
-             // More confetti from sides
-            myConfetti({ particleCount: 50 * particleMultiplier, spread: 60, origin: { x: 0 } });
-            myConfetti({ particleCount: 50 * particleMultiplier, spread: 60, origin: { x: 1 } });
-        }
-
-        // --- Game Flow Functions ---
-
-        function startAdventure() {
-            introScreen.classList.add("hidden");
-            gameFlowScreen.classList.remove("hidden");
-            fireConfettiAndBalloons(0.5); // Initial smaller burst
-        }
-
-        function updateProgressTracker(stepNumber) {
-            // Reset all steps first (optional, but safer)
-            // document.querySelectorAll('.progress-step').forEach(step => {
-            //     step.classList.remove('active-step', 'completed-step');
-            // });
-
-            // Mark previous step as completed
-            if (stepNumber > 1) {
-                const prevStep = document.getElementById(`step${stepNumber - 1}`);
-                if (prevStep) {
-                    prevStep.classList.remove("active-step");
-                    prevStep.classList.add("completed-step");
-                }
-            }
-            // Mark current step as active (if it's 1, 2, or 3)
-            if (stepNumber >= 1 && stepNumber <= 3) {
-                const currentStep = document.getElementById(`step${stepNumber}`);
-                 if (currentStep) {
-                    currentStep.classList.remove("completed-step"); // Ensure it's not marked completed
-                    currentStep.classList.add("active-step");
-                 }
-            }
-             // If moving past step 3 (to gifts), mark step 3 completed
-             if (stepNumber > 3) {
-                 const step3 = document.getElementById('step3');
-                 if (step3) {
-                     step3.classList.remove("active-step");
-                     step3.classList.add("completed-step");
-                 }
-             }
-        }
-
-        // --- Challenge 1: Math ---
-        function checkMathAnswer() {
-            const answerInput = document.getElementById("math-answer");
-            const answer = parseInt(answerInput.value);
-            if (answer === 8) { // (8 * 5) - 7 = 33
-                showExplosion("MATH POWER! 💪");
-                document.getElementById("game1").classList.add("hidden");
-                document.getElementById("game2").classList.remove("hidden");
-                completedGames++;
-                updateProgressTracker(2); // Move to step 2
-                answerInput.value = ""; // Clear input
+    function updatePowerMeter() {
+        for (let i = 0; i < wordPowerMeterSegments.length; i++) {
+            if (i < wordCombo) {
+                wordPowerMeterSegments[i].classList.add('power-active');
             } else {
-                showExplosion("ZAP! TRY AGAIN! ⚡");
-                answerInput.focus(); // Keep focus on input
+                wordPowerMeterSegments[i].classList.remove('power-active');
+            }
+        }
+    }
+
+    // --- Challenge 3: Stellar Sequence Recall Logic ---
+    function loadMemoryChallenge(levelIndex) {
+         if (levelIndex >= memoryLevels.length) {
+            console.error("Memory Level Index out of bounds:", levelIndex);
+            showGameFeedbackPopup("ALL COORDINATES PROCESSED", "No more jump sequences in this sector. Preparing for Star Vault access.", "info", () => {
+                nextChallenge(3); // Move to gifts
+            });
+            return;
+        }
+        const level = memoryLevels[levelIndex];
+        const villain = memoryVillains[levelIndex % memoryVillains.length];
+
+        memoryVillainIntro.textContent = villain.intro;
+        memoryCharacter.textContent = villain.emoji;
+        memoryLevelBadge.textContent = `JUMP ${currentMemoryLevel + 1}`;
+        updateProgressBar('memory', memoryScore, memoryLevelsPerChallenge);
+        updateStars('memory', memoryStars);
+        memoryBonusMessage.style.display = 'none';
+
+        currentEmojiSequence = generateEmojiSequence(level.sequenceLength);
+        userEmojiSequence = [];
+        updateUserSequenceDisplay();
+
+        emojiButtonsContainer.innerHTML = '';
+        const emojisForLevel = availableEmojis.slice(0, level.numEmojis);
+        emojisForLevel.sort(() => 0.5 - Math.random());
+        emojisForLevel.forEach(emoji => {
+            const button = document.createElement('button');
+            button.classList.add('btn', 'font-manga'); // font-manga for Orbitron
+            button.textContent = emoji;
+            button.onclick = (e) => addEmojiToSequence(emoji, e.target);
+            emojiButtonsContainer.appendChild(button);
+        });
+
+        emojiSequenceEl.textContent = "❓".repeat(level.sequenceLength);
+        showSequenceBtn.classList.remove('hidden');
+        checkSequenceBtn.classList.add('hidden');
+        clearEmojiBtn.classList.add('hidden');
+        emojiButtonsContainer.classList.add('hidden');
+        userSequenceEl.classList.add('hidden');
+        emojiInputElement.classList.add('hidden');
+        memoryHintEl.textContent = level.hint;
+        memoryHintEl.style.display = 'none';
+        memoryHintBtn.classList.remove('hidden');
+        memoryHintBtn.disabled = false;
+    }
+
+    function generateEmojiSequence(length) {
+        const sequence = [];
+        // Ensure currentMemoryLevel is valid for memoryLevels array
+        const currentLevelDetails = memoryLevels[Math.min(currentMemoryLevel, memoryLevels.length - 1)];
+        const emojiSet = availableEmojis.slice(0, currentLevelDetails.numEmojis);
+
+        for (let i = 0; i < length; i++) {
+            sequence.push(emojiSet[Math.floor(Math.random() * emojiSet.length)]);
+        }
+        return sequence;
+    }
+
+    function showEmojiSequence() {
+        showSequenceBtn.classList.add('hidden');
+        memoryHintBtn.classList.add('hidden');
+        emojiSequenceEl.textContent = currentEmojiSequence.join(' ');
+        setTimeout(() => {
+            emojiSequenceEl.textContent = "Encoding...";
+            setTimeout(() => {
+                emojiSequenceEl.textContent = "";
+                emojiInputElement.classList.remove('hidden');
+                userSequenceEl.classList.remove('hidden');
+                emojiButtonsContainer.classList.remove('hidden');
+                checkSequenceBtn.classList.remove('hidden');
+                clearEmojiBtn.classList.remove('hidden');
+                memoryHintBtn.classList.remove('hidden');
+            }, 1000);
+        }, currentEmojiSequence.length * 1000 + 500); // Display time based on length
+    }
+
+    function addEmojiToSequence(emoji, buttonElement) {
+        if (userEmojiSequence.length < currentEmojiSequence.length) {
+            userEmojiSequence.push(emoji);
+            updateUserSequenceDisplay();
+            animateFlyingEmoji(emoji, buttonElement);
+        }
+    }
+
+    function clearEmojiSequence() {
+        userEmojiSequence = [];
+        updateUserSequenceDisplay();
+    }
+
+    function updateUserSequenceDisplay() {
+        userSequenceEl.textContent = userEmojiSequence.join(' ') || 'Input jump coordinates...';
+    }
+
+    function checkEmojiSequence() {
+        if (currentMemoryLevel >= memoryLevels.length) {
+            console.error("Attempted to check memory answer for an invalid level:", currentMemoryLevel);
+            nextChallenge(3); return;
+        }
+        let correct = userEmojiSequence.length === currentEmojiSequence.length;
+        if (correct) {
+            for (let i = 0; i < currentEmojiSequence.length; i++) {
+                if (userEmojiSequence[i] !== currentEmojiSequence[i]) {
+                    correct = false;
+                    break;
+                }
             }
         }
 
-        // --- Challenge 2: Word Scramble ---
-        function checkWordAnswer() {
-            const answerInput = document.getElementById("word-answer");
-            const answer = answerInput.value.trim().toLowerCase();
-            // Correct word is "chocolate"
-            if (answer === "chocolate") {
-                showExplosion("WORD WHIZ! ✍️");
-                document.getElementById("game2").classList.add("hidden");
-                document.getElementById("game3").classList.remove("hidden");
-                completedGames++;
-                updateProgressTracker(3); // Move to step 3
-                answerInput.value = ""; // Clear input
-            } else {
-                showExplosion("POW! NOT QUITE! 💥");
-                 answerInput.focus();
-            }
-        }
+        if (correct) {
+            totalScore += 250;
+            memoryScore++;
+            if (memoryScore > 0) memoryStars = Math.min(3, memoryScore);
+            updateStars('memory', memoryStars);
+            triggerConfetti(600, ['star']);
+            memoryBonusMessage.style.display = 'block';
 
-        // --- Challenge 3: Memory Game ---
-        function showEmojiSequence() {
-            // Generate a random sequence of 4 unique emojis from the available ones
-            currentEmojiSequence = BUTTON_EMOJIS.sort(() => 0.5 - Math.random()).slice(0, 4);
-
-            const sequenceElement = document.getElementById("emoji-sequence");
-            const showButton = document.getElementById("show-sequence-btn");
-            const inputArea = document.getElementById("emoji-input");
-            const buttonsArea = document.getElementById("emoji-buttons");
-            const checkButton = document.getElementById("check-sequence-btn");
-            const clearButton = document.getElementById("clear-emoji-btn");
-            const userSequenceDisplay = document.getElementById("user-sequence");
-
-            // Reset user input and hide controls initially
-            clearEmojiSequence();
-            showButton.classList.add("hidden");
-            inputArea.classList.add("hidden");
-            buttonsArea.classList.add("hidden");
-            checkButton.classList.add("hidden");
-            clearButton.classList.add("hidden");
-            userSequenceDisplay.classList.add("hidden");
-
-            sequenceElement.textContent = ""; // Clear previous display
-            sequenceElement.style.opacity = 1; // Ensure visible
-
-            let i = 0;
-            const intervalId = setInterval(() => {
-                if (i < currentEmojiSequence.length) {
-                    sequenceElement.textContent = currentEmojiSequence[i]; // Show current emoji
-                    i++;
+            showGameFeedbackPopup("ASTRO-MEMORY ONLINE!", `Hyperspace coordinates locked! +250 Cosmic Energy!`, "success", () => {
+                if (memoryScore >= memoryLevelsPerChallenge) {
+                     showRewardPopup("SECTOR 3 NAVIGATED!", `You defied ${memoryVillains[(currentMemoryLevel)%memoryVillains.length].name} and earned ${memoryStars} star-emblems! ⭐`, '🌌', () => nextChallenge(3));
                 } else {
-                    // Sequence finished showing
-                    clearInterval(intervalId);
-                    // Hide the sequence after a brief pause
-                    setTimeout(() => {
-                        sequenceElement.style.opacity = 0;
-                        setTimeout(() => {
-                            sequenceElement.textContent = "❓❓❓❓"; // Show question marks
-                            sequenceElement.style.opacity = 1;
-                            // Reveal input elements
-                            inputArea.classList.remove("hidden");
-                            buttonsArea.classList.remove("hidden");
-                            checkButton.classList.remove("hidden");
-                            clearButton.classList.remove("hidden");
-                            userSequenceDisplay.classList.remove("hidden"); // Show user sequence area
-                        }, 300); // Wait for fade out
-                    }, 600); // Show last emoji for 0.6s
+                    currentMemoryLevel++;
+                    if (currentMemoryLevel < memoryLevels.length) {
+                        loadMemoryChallenge(currentMemoryLevel);
+                    } else {
+                         showGameFeedbackPopup("ALL SEQUENCES ATTEMPTED!", "All jump coordinates processed, but the final destination isn't plotted. Preparing for vault access...", "info", () => {
+                           nextChallenge(3);
+                        });
+                    }
                 }
-            }, 1000); // Time each emoji is shown (1 second)
+            });
+        } else {
+            userSequenceEl.classList.add('shake');
+            setTimeout(() => userSequenceEl.classList.remove('shake'), 500);
+            showGameFeedbackPopup("JUMP FAILED!", "Incorrect coordinates, Commander! The Void Whisperer's interference is strong. Try again!", "error", () => {
+                clearEmojiSequence();
+            });
         }
+        updateProgressBar('memory', memoryScore, memoryLevelsPerChallenge);
+    }
 
-        function addEmoji(emoji) {
-            // Add emoji only if the sequence isn't full
-            if (userEmojiSequence.length < currentEmojiSequence.length) {
-                userEmojiSequence.push(emoji);
-                document.getElementById("user-sequence").textContent = userEmojiSequence.join(" ");
-            }
-        }
 
-        function clearEmojiSequence() {
-            userEmojiSequence = [];
-            document.getElementById("user-sequence").textContent = "";
-        }
+    // --- Helper Functions ---
+    function showHint(gamePrefix) {
+        document.getElementById(`${gamePrefix}-hint`).style.display = 'block';
+        document.getElementById(`${gamePrefix}-hint-btn`).disabled = true;
+        totalScore -= 25; // Small penalty for hint
+    }
 
-        function checkEmojiSequence() {
-            // Ensure the user entered the correct number of emojis
-            if (userEmojiSequence.length !== currentEmojiSequence.length) {
-                showExplosion(`ENTER ALL ${currentEmojiSequence.length} EMOJIS! 🔢`);
-                return;
-            }
+    function updateProgressBar(gamePrefix, score, totalLevelsInChallenge) {
+        const progress = Math.min(100, (score / totalLevelsInChallenge) * 100);
+        document.getElementById(`${gamePrefix}-progress`).style.width = `${progress}%`;
+    }
 
-            // Compare user sequence with the correct sequence
-            const correct = JSON.stringify(userEmojiSequence) === JSON.stringify(currentEmojiSequence);
-
-            if (correct) {
-                showExplosion("MEMORY MEGA-MIND! 🏆");
-                document.getElementById("game3").classList.add("hidden");
-                giftSelectionScreen.classList.remove("hidden");
-                completedGames++;
-                updateProgressTracker(4); // Mark step 3 completed, move past it
-                setupGiftBoard(); // Prepare the gift selection board
+    function updateStars(gamePrefix, starsEarned) {
+        for (let i = 1; i <= 3; i++) {
+            const starEl = document.getElementById(`${gamePrefix}-star-${i}`);
+            if (i <= starsEarned) {
+                starEl.classList.add('star-earned');
+                starEl.classList.remove('star-empty');
             } else {
-                showExplosion("KA-POW! WRONG ORDER! 🔄");
-                clearEmojiSequence(); // Clear input for retry
-                // Reset UI to show the sequence again
-                document.getElementById("show-sequence-btn").classList.remove("hidden");
-                document.getElementById("emoji-input").classList.add("hidden");
-                document.getElementById("emoji-buttons").classList.add("hidden");
-                document.getElementById("check-sequence-btn").classList.add("hidden");
-                document.getElementById("clear-emoji-btn").classList.add("hidden");
-                 document.getElementById("user-sequence").classList.add("hidden");
-                document.getElementById("emoji-sequence").textContent = ""; // Clear question marks
+                starEl.classList.remove('star-earned');
+                starEl.classList.add('star-empty');
             }
         }
+    }
 
-        // --- Gift Selection ---
-        function setupGiftBoard() {
-            const board = document.getElementById("gift-board");
-            board.innerHTML = ''; // Clear previous board
-            selectedTiles = 0; // Reset selection count
-            selectedGifts = []; // Reset selected gifts array
-            document.getElementById("selections-remaining").textContent = MAX_SELECTIONS;
-            document.getElementById("finish-btn").classList.add("hidden"); // Hide reveal button initially
+    function showGameFeedbackPopup(title, message, type = 'info', callback = null, autoDismissDelay = 3000) {
+        const existingOverlay = document.getElementById('feedback-popup-overlay-id');
+        if (existingOverlay) existingOverlay.remove();
 
-            // Create an array representing tile contents
-            // It will contain indices of GIFTS array (0 to NUM_GIFTS_HIDDEN - 1)
-            // and placeholders (-1) for non-gift tiles.
-            let tileContents = [];
-            for (let i = 0; i < NUM_GIFTS_HIDDEN; i++) {
-                tileContents.push(i); // Add gift indices
-            }
-            for (let i = 0; i < TOTAL_TILES - NUM_GIFTS_HIDDEN; i++) {
-                tileContents.push(-1); // Add non-gift placeholders
-            }
+        const overlay = document.createElement('div');
+        overlay.id = 'feedback-popup-overlay-id';
+        overlay.className = 'feedback-popup-overlay';
 
-            // Shuffle the tile contents randomly
-            tileContents.sort(() => Math.random() - 0.5);
+        const popup = document.createElement('div');
+        popup.className = `feedback-popup ${type}`;
 
-            // Create and append tiles to the board
-            for (let i = 0; i < TOTAL_TILES; i++) {
-                const tile = document.createElement("div");
-                tile.className = "tile";
-                tile.dataset.index = i; // Position index
-                tile.dataset.giftIndex = tileContents[i]; // Content (-1 or gift index)
-                // Set initial content (question mark)
-                tile.innerHTML = `<div class="tile-content">?</div>`;
-                // Add click listener
-                tile.addEventListener("click", selectTile);
-                board.appendChild(tile);
-            }
+        const icon = document.createElement('div');
+        icon.className = 'feedback-popup-icon';
+        if (type === 'success') icon.textContent = '✅';
+        else if (type === 'error') icon.textContent = '❌';
+        else icon.textContent = 'ℹ️';
+
+        const titleEl = document.createElement('h3');
+        titleEl.className = 'feedback-popup-title';
+        titleEl.textContent = title;
+
+        const messageEl = document.createElement('p');
+        messageEl.className = 'feedback-popup-message';
+        messageEl.textContent = message;
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'feedback-popup-button';
+        closeButton.textContent = 'ROGER THAT!';
+
+        let timeoutId = null;
+        const closePopup = () => {
+            if(timeoutId) clearTimeout(timeoutId);
+            overlay.style.opacity = '0';
+            popup.style.transform = 'scale(0.3) translateY(50px)';
+            setTimeout(() => {
+                if (document.body.contains(overlay)) { // Check if overlay still exists
+                    overlay.remove();
+                }
+                if (callback) callback();
+            }, 400);
+        };
+        closeButton.onclick = closePopup;
+        
+        popup.appendChild(icon); popup.appendChild(titleEl); popup.appendChild(messageEl); popup.appendChild(closeButton);
+        overlay.appendChild(popup); document.body.appendChild(overlay);
+
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+            popup.style.transform = 'scale(1) translateY(0px)';
+        });
+        
+        if (autoDismissDelay && type !== 'error') {
+           timeoutId = setTimeout(closePopup, autoDismissDelay);
+        } else if (autoDismissDelay && type === 'error') { // Longer for errors
+            timeoutId = setTimeout(closePopup, autoDismissDelay + 1500);
         }
+    }
 
-        function selectTile(event) {
-            const tile = event.currentTarget;
+    function showRewardPopup(title, message, emoji, callback) {
+        const existingOverlay = document.getElementById('reward-popup-overlay-id');
+        if (existingOverlay) existingOverlay.remove();
 
-            // Ignore click if max selections reached or tile already flipped
-            if (selectedTiles >= MAX_SELECTIONS || tile.classList.contains("flipped")) {
-                return;
-            }
+        const overlay = document.createElement('div');
+        overlay.className = 'reward-popup-overlay';
+        overlay.id = 'reward-popup-overlay-id';
 
-            const giftIndex = parseInt(tile.dataset.giftIndex);
+        const popup = document.createElement('div');
+        popup.className = 'reward-popup';
 
-            // Flip the tile visually
-            tile.classList.add("flipped");
-            tile.removeEventListener('click', selectTile); // Prevent re-clicking
+        const titleEl = document.createElement('h3');
+        titleEl.className = 'reward-title'; titleEl.textContent = title;
+        const messageEl = document.createElement('p');
+        messageEl.className = 'reward-message'; messageEl.textContent = message;
+        const emojiEl = document.createElement('div');
+        emojiEl.className = 'reward-emoji'; emojiEl.textContent = emoji;
+        const closeButton = document.createElement('button');
+        closeButton.className = 'reward-close-btn'; closeButton.textContent = 'MAGNIFICENT!';
+        
+        const closeAndCallback = () => {
+            overlay.style.opacity = '0';
+            popup.style.transform = 'scale(0.7) rotateY(-90deg)';
+            setTimeout(() => {
+                 if (document.body.contains(overlay)) {
+                    overlay.remove();
+                }
+                if (callback) callback();
+            }, 500);
+        };
+        closeButton.onclick = closeAndCallback;
 
-            const tileContent = tile.querySelector('.tile-content');
+        popup.appendChild(titleEl); popup.appendChild(emojiEl); popup.appendChild(messageEl); popup.appendChild(closeButton);
+        overlay.appendChild(popup); document.body.appendChild(overlay);
+        
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+            popup.style.transform = 'scale(1) rotateY(0deg)';
+        });
+        triggerConfetti(1500, ['star', 'circle']);
+    }
 
-            // Reveal content: gift icon or 'no gift' icon
-            if (giftIndex >= 0 && giftIndex < GIFTS.length) {
-                // It's a valid gift
-                tileContent.innerHTML = `<span class="gift-icon">${GIFTS[giftIndex].icon}</span>`;
-                selectedGifts.push(GIFTS[giftIndex]); // Add the found gift object
-            } else {
-                // No gift in this tile
-                tileContent.innerHTML = `<span class="gift-icon">💨</span>`; // Puff of smoke emoji
-            }
+    function populateGifts() {
+        giftsList.innerHTML = '';
+        gifts.forEach(gift => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${gift.emoji}</span>
+                ${gift.name}
+                <button class="btn btn-reveal font-manga ml-auto text-sm py-2 px-3" data-gift-id="${gift.id}" onclick="selectGift('${gift.name}', '${gift.emoji}', this)">Claim Artifact!</button>
+            `;
+            giftsList.appendChild(li);
+        });
+    }
 
-            selectedTiles++;
-            // Update remaining selections display
-            document.getElementById("selections-remaining").textContent = MAX_SELECTIONS - selectedTiles;
+    function selectGift(giftName, giftEmoji, buttonElement) {
+        if (!giftsUnlocked.find(g => g.name === giftName)) {
+            giftsUnlocked.push({ name: giftName, emoji: giftEmoji });
+            buttonElement.textContent = 'ARTIFACT CLAIMED! ✅';
+            buttonElement.disabled = true;
+            buttonElement.classList.remove('btn-reveal');
+            buttonElement.classList.add('btn-clear', 'opacity-70');
 
-            // Check if max selections reached
-            if (selectedTiles >= MAX_SELECTIONS) {
-                document.getElementById("finish-btn").classList.remove("hidden"); // Show reveal button
-                // Disable remaining unflipped tiles
-                 document.querySelectorAll('#gift-board .tile:not(.flipped)').forEach(t => {
-                    t.style.cursor = 'default';
-                    t.removeEventListener('click', selectTile);
-                 });
-            }
+            const flyingGift = document.createElement('div');
+            flyingGift.textContent = giftEmoji;
+            flyingGift.style.position = 'fixed';
+            const rect = buttonElement.getBoundingClientRect();
+            flyingGift.style.left = `${rect.left + rect.width / 2}px`;
+            flyingGift.style.top = `${rect.top + rect.height / 2}px`;
+            flyingGift.style.fontSize = '2.5rem';
+            flyingGift.style.zIndex = '5000';
+            flyingGift.style.transition = 'transform 1s cubic-bezier(0.5, -0.5, 0.5, 1.5), opacity 1s ease-out';
+            document.body.appendChild(flyingGift);
+
+            requestAnimationFrame(() => {
+                flyingGift.style.transform = `translate(${window.innerWidth * 0.85 - rect.left}px, ${window.innerHeight * 0.05 - rect.top}px) scale(0.3) rotate(720deg)`;
+                flyingGift.style.opacity = '0';
+            });
+            setTimeout(() => flyingGift.remove(), 1000);
+
+            showGameFeedbackPopup("ARTIFACT ACQUIRED!", `You've secured the ${giftName}! ${giftEmoji}`, "success", null, 2000);
+            totalScore += 500;
         }
+        if (giftsUnlocked.length === gifts.length) {
+            revealFinalBtn.disabled = false;
+            revealFinalBtn.classList.remove('opacity-50', 'cursor-not-allowed'); // Ensure these are Tailwind classes if used, or handle via style.
+            revealFinalBtn.style.animation = "pulseGold 1s infinite";
+        }
+    }
 
-        // --- Final Result ---
-        function showFinalResult() {
-            giftSelectionScreen.classList.add("hidden");
-            finalResultScreen.classList.remove("hidden");
+    const styleSheet = document.styleSheets[0];
+    try { // Add keyframes for gold pulse if not already globally defined
+        styleSheet.insertRule(`
+            @keyframes pulseGold {
+                0% { box-shadow: 0 6px 0px #8B4513aa, 0 0 15px #FFD700, 0 0 20px #FFD700; transform: scale(1); }
+                50% { box-shadow: 0 8px 0px #8B4513cc, 0 0 25px #FFEE75, 0 0 30px #FFEE75; transform: scale(1.05); }
+                100% { box-shadow: 0 6px 0px #8B4513aa, 0 0 15px #FFD700, 0 0 20px #FFD700; transform: scale(1); }
+            }
+        `, styleSheet.cssRules.length);
+    } catch (e) {
+        console.warn("Could not insert pulseGold keyframes, might already exist or stylesheet issue:", e);
+    }
 
-            const giftsList = document.getElementById("gifts-list");
-            giftsList.innerHTML = ""; // Clear previous results
 
-            // Display the won gifts
-            if (selectedGifts.length === 0) {
-                const li = document.createElement("li");
-                li.innerHTML = `<span>😅</span> Oops! No treasures this time, but you conquered the challenges!`;
-                giftsList.appendChild(li);
-            } else {
-                selectedGifts.forEach(gift => {
-                    const li = document.createElement("li");
-                    // Display gift icon and name
-                    li.innerHTML = `<span>${gift.icon}</span> ${gift.name}`;
-                    giftsList.appendChild(li);
+    function revealFinalMessage() {
+        giftSelectionScreen.classList.add('hidden');
+        finalMessageScreen.classList.remove('hidden');
+        document.getElementById('final-title').textContent = `MISSION ACCOMPLISHED! (Score: ${totalScore})`;
+        finalMessageScreen.scrollIntoView({ behavior: 'smooth' });
+        triggerConfetti(5000, ['star', 'circle'], true);
+    }
+
+    function triggerConfetti(duration = 1500, shapes = ['star'], grandFinale = false) {
+        if (!confettiInstance) {
+            console.warn("Confetti instance not available!");
+            return;
+        }
+        const end = Date.now() + duration;
+        const particleColors = ['#FFD700', '#FFDF00', '#F0E68C', '#FFFACD', '#7DF9FF', '#A0FFFF', '#FF00FF', '#DA70D6'];
+
+        (function frame() {
+            const particleCount = grandFinale ? 15 : 7;
+            const spread = grandFinale ? 120 : 80;
+            const zIndexVal = grandFinale ? 10000 : 9999; // Renamed to avoid conflict
+
+            confettiInstance({
+                particleCount: particleCount, angle: 60, spread: spread, origin: { x: 0, y:0.7 },
+                colors: particleColors, shapes: shapes, zIndex: zIndexVal, scalar: grandFinale ? 1.2 : 1
+            });
+            confettiInstance({
+                particleCount: particleCount, angle: 120, spread: spread, origin: { x: 1, y:0.7 },
+                colors: particleColors, shapes: shapes, zIndex: zIndexVal, scalar: grandFinale ? 1.2 : 1
+            });
+            if (grandFinale && Math.random() > 0.7) {
+                 confettiInstance({
+                    particleCount: particleCount * 2, angle: 90, spread: 180, origin: { x: 0.5, y: 0.5 },
+                    colors: particleColors, shapes: shapes, zIndex: zIndexVal, scalar: 1.5, drift: Math.random() > 0.5 ? 1 : -1
                 });
             }
 
-            // Display final birthday message
-            document.getElementById("final-birthday-message").textContent =
-                "Happy Birthday, Daksh! Hope you have an absolutely SUPER day filled with joy, fun, and adventure! 🎉🎂🥳";
-
-            fireConfettiAndBalloons(1.5); // Big final burst!
-            // Optionally, keep confetti going
-            // setInterval(() => fireConfettiAndBalloons(0.2), 5000);
-        }
-
-        // --- Effects ---
-        function showExplosion(text) {
-            // Remove any existing explosion first
-            const existingExplosion = document.querySelector(".explosion");
-            if(existingExplosion) {
-                existingExplosion.remove();
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
             }
+        }());
+    }
+    
+    function animateFlyingEmoji(emoji, targetButton) {
+        if (!targetButton) return;
+        const flyingEmoji = document.createElement('div');
+        flyingEmoji.textContent = emoji;
+        flyingEmoji.classList.add('flying-emoji');
+        document.body.appendChild(flyingEmoji);
 
-            // Create and add the new explosion element
-            const explosion = document.createElement("div");
-            explosion.className = "explosion";
-            explosion.textContent = text;
-            document.body.appendChild(explosion);
+        const buttonRect = targetButton.getBoundingClientRect();
+        flyingEmoji.style.left = `${buttonRect.left + buttonRect.width / 2 - 15}px`;
+        flyingEmoji.style.top = `${buttonRect.top - 30}px`;
 
-            // Remove the element after the animation completes
-            setTimeout(() => {
-                 // Check if it's still in the DOM before removing
-                 if(explosion.parentNode === document.body) {
-                    document.body.removeChild(explosion);
-                 }
-            }, 800); // Matches animation duration
-        }
+        setTimeout(() => {
+            if (document.body.contains(flyingEmoji)) {
+                flyingEmoji.remove();
+            }
+        }, 1500);
+    }
 
-        // --- Initial Setup ---
-        // Optional: Pre-load images or perform other setup tasks on window load
-        // window.onload = () => {
-        //     console.log("Page loaded. Ready for adventure!");
-        // };
+    document.addEventListener('DOMContentLoaded', () => {
+        updateProgressTracker(0); // Initialize progress tracker display
+    });
 
-    </script>
+</script>
 </body>
 </html>
